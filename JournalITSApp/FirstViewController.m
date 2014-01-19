@@ -7,23 +7,225 @@
 //
 
 #import "FirstViewController.h"
+#import "DownloadManager.h"
+#import "jits.h"
+#import "AppDelegate.h"
+#import "ReaderViewController.h"
+#import "jitsTableViewCell.h"
 
-@interface FirstViewController ()
+@interface FirstViewController ()<UITableViewDelegate, UITableViewDataSource, DownloadManagerDelegate, ReaderViewControllerDelegate>
+
+@property (strong, nonatomic) DownloadManager *downloadManager;
+@property (strong, nonatomic) NSDate *startDate;
+@property (nonatomic) NSInteger downloadErrorCount;
+@property (nonatomic) NSInteger downloadSuccessCount;
 
 @end
 
 @implementation FirstViewController
 
+@synthesize json, jitsArray;
+
+#pragma mark Constants
+
+#define DEMO_VIEW_CONTROLLER_PUSH FALSE
+
+#pragma mark UIViewController methods
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    [self retrieveData];
+    
+    self.downloadManager = [[DownloadManager alloc] initWithDelegate:self];
+    self.downloadManager.maxConcurrentDownloads = 4;
 }
+
+- (IBAction)readSampleIssue:(id)sender {
+    
+	NSString *phrase = nil; // Document password (for unlocking most encrypted PDF files)
+    
+	NSArray *pdfs = [[NSBundle mainBundle] pathsForResourcesOfType:@"pdf" inDirectory:nil];
+    
+	NSString *filePath = [pdfs lastObject]; assert(filePath != nil); // Path to last PDF file
+    
+	ReaderDocument *document = [ReaderDocument withDocumentFilePath:filePath password:phrase];
+    
+    if (document != nil) // Must have a valid ReaderDocument object in order to proceed with things
+    {
+        ReaderViewController *readerViewController = [[ReaderViewController alloc] initWithReaderDocument:document];
+        
+        readerViewController.delegate = self; // Set the ReaderViewController delegate to self
+        
+        
+#if (DEMO_VIEW_CONTROLLER_PUSH == TRUE)
+        
+        [self.navigationController pushViewController:readerViewController animated:YES];
+        
+#else // present in a modal view controller
+        
+        readerViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        readerViewController.modalPresentationStyle = UIModalPresentationFullScreen;
+        
+        [self presentViewController:readerViewController animated:YES completion:NULL];
+        
+#endif // DEMO_VIEW_CONTROLLER_PUSH
+    }
+    
+    
+}
+
+#pragma mark ReaderViewControllerDelegate methods
+
+- (void)dismissReaderViewController:(ReaderViewController *)viewController
+{
+#if (DEMO_VIEW_CONTROLLER_PUSH == TRUE)
+    
+	[self.navigationController popViewControllerAnimated:YES];
+    
+#else // dismiss the modal view controller
+    
+	[self dismissViewControllerAnimated:YES completion:NULL];
+    
+#endif // DEMO_VIEW_CONTROLLER_PUSH
+}
+
+
+-(void)retrieveData
+{
+    
+    NSURL *url = [NSURL URLWithString:@"http://speedyreference.com/jits.php"];
+    NSData * data = [NSData dataWithContentsOfURL:url];
+    
+    
+    json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+    
+    //Set up array
+    jitsArray = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i < json.count; i++) {
+        //create object
+        NSString * jID = [[json objectAtIndex:i] objectForKey:@"ID"];
+        NSString * jCoverImage = [[json objectAtIndex:i] objectForKey:@"COVERIMAGE"];
+        NSString * jURL = [[json objectAtIndex:i] objectForKey:@"URL"];
+        NSString * jIssue = [[json objectAtIndex:i] objectForKey:@"ISSUE"];
+        
+        
+        jits * myJits = [[jits alloc] initWithjitsID: jID andCoverImage:jCoverImage andURL:jURL andIssue:jIssue];
+        
+        
+        //Add object to Array
+        [jitsArray addObject:myJits];
+    }
+    
+    [self.tableView reloadData];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+//#warning Potentially incomplete method implementation.
+    // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+//#warning Incomplete method implementation.
+    // Return the number of rows in the section.
+    return[jitsArray count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"DownloadCell";
+    
+    jitsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (cell == nil) {
+        cell = [[jitsTableViewCell alloc]
+                initWithStyle:UITableViewCellStyleDefault
+                reuseIdentifier:CellIdentifier];
+    }
+    
+    
+    jits * jitsInstance = nil;
+    
+    jitsInstance = [jitsArray objectAtIndex:indexPath.row];
+    
+    cell.issue.text = jitsInstance.issue;
+    
+    NSString * myCoverURL = [NSString stringWithFormat:@"%@", jitsInstance.coverimage];
+    
+    UIImage* myImage = [UIImage imageWithData:
+                        [NSData dataWithContentsOfURL:
+                         [NSURL URLWithString: myCoverURL]]];
+    
+    
+    cell.coverimage.image = myImage;
+    
+    return cell;
+
+}
+
+/*
+ // Override to support conditional editing of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ // Return NO if you do not want the specified item to be editable.
+ return YES;
+ }
+ */
+
+/*
+ // Override to support editing the table view.
+ - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ if (editingStyle == UITableViewCellEditingStyleDelete) {
+ // Delete the row from the data source
+ [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+ }
+ else if (editingStyle == UITableViewCellEditingStyleInsert) {
+ // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+ }
+ }
+ */
+
+/*
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+ {
+ }
+ */
+
+/*
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
+
+/*
+ #pragma mark - Navigation
+ 
+ // In a story board-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ 
+ */
 
 @end

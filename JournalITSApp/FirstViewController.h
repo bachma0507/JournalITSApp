@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+@interface FirstViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, strong) NSMutableArray * json;
+@property (nonatomic, strong) NSMutableArray * jitsArray;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+- (IBAction)readSampleIssue:(id)sender;
+
+-(void) retrieveData;
 
 @end
