@@ -127,6 +127,34 @@ The Journal of ITS is a bimonthly circulation available to BICSI members at no a
             </objects>
             <point key="canvasLocation" x="3702" y="-879"/>
         </scene>
+        <!--Issues Table View Controller-->
+        <scene sceneID="LMa-4D-Wdm">
+            <objects>
+                <tableViewController id="bG0-Gz-LX7" customClass="issuesTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="CAR-B6-Ysl">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="4qz-dz-chP">
+                                <rect key="frame" x="0.0" y="22" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4qz-dz-chP" id="7R3-MS-px6">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="bG0-Gz-LX7" id="j5q-fR-082"/>
+                            <outlet property="delegate" destination="bG0-Gz-LX7" id="P7y-ta-wuv"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XMK-wc-bjx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4653" y="-854"/>
+        </scene>
         <!--Second View Controller - Second-->
         <scene sceneID="wg7-f3-ORb">
             <objects>

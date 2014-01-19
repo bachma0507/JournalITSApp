@@ -67,6 +67,7 @@
 		4CF6FB63188BB4E600E2A539 /* ThumbsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6FB40188BB4E500E2A539 /* ThumbsViewController.m */; };
 		4CF6FB64188BB4E600E2A539 /* UIXToolbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6FB42188BB4E500E2A539 /* UIXToolbarView.m */; };
 		4CF6FB66188BB4F200E2A539 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CF6FB65188BB4F200E2A539 /* Localizable.strings */; };
+		4CF6FB69188BC24300E2A539 /* issuesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6FB68188BC24300E2A539 /* issuesTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,6 +172,8 @@
 		4CF6FB41188BB4E500E2A539 /* UIXToolbarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIXToolbarView.h; sourceTree = "<group>"; };
 		4CF6FB42188BB4E500E2A539 /* UIXToolbarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIXToolbarView.m; sourceTree = "<group>"; };
 		4CF6FB65188BB4F200E2A539 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		4CF6FB67188BC24300E2A539 /* issuesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = issuesTableViewController.h; sourceTree = "<group>"; };
+		4CF6FB68188BC24300E2A539 /* issuesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = issuesTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +257,8 @@
 				4CF6FAAE1888FB3900E2A539 /* TableViewController.m */,
 				4CF6FAFC188BB2CA00E2A539 /* jitsTableViewCell.h */,
 				4CF6FAFD188BB2CA00E2A539 /* jitsTableViewCell.m */,
+				4CF6FB67188BC24300E2A539 /* issuesTableViewController.h */,
+				4CF6FB68188BC24300E2A539 /* issuesTableViewController.m */,
 			);
 			path = JournalITSApp;
 			sourceTree = "<group>";
@@ -502,6 +507,7 @@
 				4CF6FB5F188BB4E600E2A539 /* ReaderThumbsView.m in Sources */,
 				4CF6FB55188BB4E600E2A539 /* ReaderContentTile.m in Sources */,
 				4CF6FB61188BB4E600E2A539 /* ReaderViewController.m in Sources */,
+				4CF6FB69188BC24300E2A539 /* issuesTableViewController.m in Sources */,
 				4CF6FB0A188BB45A00E2A539 /* Download.m in Sources */,
 				4CF6FB64188BB4E600E2A539 /* UIXToolbarView.m in Sources */,
 				4CF6FB44188BB4E500E2A539 /* CGPDFDocument.m in Sources */,
@@ -722,6 +728,7 @@
 				4CF6F99518846BBB00E2A539 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4CF6F99618846BBB00E2A539 /* Build configuration list for PBXNativeTarget "JournalITSAppTests" */ = {
 			isa = XCConfigurationList;
@@ -730,6 +737,7 @@
 				4CF6F99818846BBB00E2A539 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
