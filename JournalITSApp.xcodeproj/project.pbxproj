@@ -71,6 +71,7 @@
 		4CF6FB6F188BCBA100E2A539 /* popViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6FB6E188BCBA100E2A539 /* popViewController.m */; };
 		4CF6FB72188CA27400E2A539 /* cellbkgnd.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4CF6FB71188CA27400E2A539 /* cellbkgnd.jpg */; };
 		4CF6FB76188CC97F00E2A539 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6FB75188CC97F00E2A539 /* Reachability.m */; };
+		4CF6FB7C188D79BD00E2A539 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6FB7B188D79BD00E2A539 /* KeychainItemWrapper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,6 +183,8 @@
 		4CF6FB71188CA27400E2A539 /* cellbkgnd.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cellbkgnd.jpg; sourceTree = "<group>"; };
 		4CF6FB74188CC97F00E2A539 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		4CF6FB75188CC97F00E2A539 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		4CF6FB7A188D79BD00E2A539 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		4CF6FB7B188D79BD00E2A539 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -397,6 +400,8 @@
 		4CF6FB73188CC96500E2A539 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4CF6FB7A188D79BD00E2A539 /* KeychainItemWrapper.h */,
+				4CF6FB7B188D79BD00E2A539 /* KeychainItemWrapper.m */,
 				4CF6FB74188CC97F00E2A539 /* Reachability.h */,
 				4CF6FB75188CC97F00E2A539 /* Reachability.m */,
 			);
@@ -538,6 +543,7 @@
 				4CF6FB5B188BB4E600E2A539 /* ReaderThumbFetch.m in Sources */,
 				4CF6FAAF1888FB3900E2A539 /* TableViewController.m in Sources */,
 				4CF6FB5A188BB4E600E2A539 /* ReaderThumbCache.m in Sources */,
+				4CF6FB7C188D79BD00E2A539 /* KeychainItemWrapper.m in Sources */,
 				4CF6FB5F188BB4E600E2A539 /* ReaderThumbsView.m in Sources */,
 				4CF6FB55188BB4E600E2A539 /* ReaderContentTile.m in Sources */,
 				4CF6FB61188BB4E600E2A539 /* ReaderViewController.m in Sources */,

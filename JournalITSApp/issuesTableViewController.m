@@ -54,6 +54,8 @@
     
     self.cancelButton.enabled = NO;
     [progressView setHidden:YES];
+    
+    [self.navigationItem setHidesBackButton:YES];
 
 }
 
@@ -248,22 +250,22 @@
     
 }
 
-- (UIImage *)cellBackgroundForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    //NSInteger rowCount = [self tableView:[self tableView] numberOfRowsInSection:0];
-    //NSInteger rowIndex = indexPath.row;
-    UIImage *background = [UIImage imageNamed:@"cellbkgnd.jpg"];
-    
-    //    if (rowIndex == 0) {
-    //        background = [UIImage imageNamed:@"cell_top.png"];
-    //    } else if (rowIndex == rowCount - 1) {
-    //        background = [UIImage imageNamed:@"cell_bottom.png"];
-    //    } else {
-    //        background = [UIImage imageNamed:@"cell_middle.png"];
-    //    }
-    
-    return background;
-}
+//- (UIImage *)cellBackgroundForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    //NSInteger rowCount = [self tableView:[self tableView] numberOfRowsInSection:0];
+//    //NSInteger rowIndex = indexPath.row;
+//    UIImage *background = [UIImage imageNamed:@"cellbkgnd.jpg"];
+//    
+//    //    if (rowIndex == 0) {
+//    //        background = [UIImage imageNamed:@"cell_top.png"];
+//    //    } else if (rowIndex == rowCount - 1) {
+//    //        background = [UIImage imageNamed:@"cell_bottom.png"];
+//    //    } else {
+//    //        background = [UIImage imageNamed:@"cell_middle.png"];
+//    //    }
+//    
+//    return background;
+//}
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

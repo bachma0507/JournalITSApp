@@ -7,8 +7,10 @@
 //
 
 #import "popViewController.h"
+#import "KeychainItemWrapper.h"
 
 @interface popViewController ()
+
 
 @end
 
@@ -29,6 +31,7 @@
 	// Do any additional setup after loading the view.
     
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"cellbkgnd.jpg"]]];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,8 +42,11 @@
 
 - (IBAction)loginClicked:(id)sender {
     
+    
+    
     NSInteger success = 0;
     @try {
+        
         
         if([[self.txtUsername text] isEqualToString:@""] || [[self.txtPassword text] isEqualToString:@""] ) {
             
@@ -50,7 +56,7 @@
             NSString *post =[[NSString alloc] initWithFormat:@"username=%@&password=%@",[self.txtUsername text],[self.txtPassword text]];
             NSLog(@"PostData: %@",post);
             
-            NSURL *url=[NSURL URLWithString:@"http://speedyreference.com/jitslogin.php"];
+            NSURL *url=[NSURL URLWithString:@"https://speedyreference.com/jitslogin.php"];
             
             NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
             
@@ -106,6 +112,7 @@
         [self alertStatus:@"Sign in Failed." :@"Error!" :0];
     }
     if (success) {
+        
         [self performSegueWithIdentifier:@"login_success" sender:self];
     }
 

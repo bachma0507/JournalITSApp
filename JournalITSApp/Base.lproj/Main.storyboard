@@ -20,7 +20,7 @@
             </objects>
             <point key="canvasLocation" x="2736" y="-825"/>
         </scene>
-        <!--First View Controller - Journal of Information Technology Systems-->
+        <!--First View Controller - The Journal of Information Technology Systems-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" sceneMemberID="viewController">
@@ -116,7 +116,7 @@ The Journal of ITS is a bimonthly circulation available to BICSI members at no a
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="zgh-mf-kAF" kind="push" id="SaD-kw-ciX"/>
+                                    <segue destination="zgh-mf-kAF" kind="push" id="rYT-oO-4Xa"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -124,7 +124,7 @@ The Journal of ITS is a bimonthly circulation available to BICSI members at no a
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="Home" image="first" id="acW-dT-cKf"/>
-                    <navigationItem key="navigationItem" title="Journal of Information Technology Systems" id="rod-AK-eRu"/>
+                    <navigationItem key="navigationItem" title="The Journal of Information Technology Systems" id="rod-AK-eRu"/>
                     <connections>
                         <outlet property="imageView" destination="q2R-2o-zdD" id="eUl-tb-v1s"/>
                         <outlet property="jitsTextView" destination="2M4-ur-eFs" id="sDJ-ie-2yF"/>
@@ -136,14 +136,14 @@ The Journal of ITS is a bimonthly circulation available to BICSI members at no a
             </objects>
             <point key="canvasLocation" x="3702" y="-879"/>
         </scene>
-        <!--Issues Table View Controller - Journal of ITS Issues-->
+        <!--Issues Table View Controller - The Journal of ITS: Issues-->
         <scene sceneID="LMa-4D-Wdm">
             <objects>
                 <tableViewController id="bG0-Gz-LX7" customClass="issuesTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="226" sectionHeaderHeight="22" sectionFooterHeight="22" id="CAR-B6-Ysl">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="0.87" colorSpace="calibratedRGB"/>
                         <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="x7k-1d-GZS">
                             <rect key="frame" x="0.0" y="312" width="768" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -196,7 +196,7 @@ The Journal of ITS is a bimonthly circulation available to BICSI members at no a
                             <outlet property="delegate" destination="bG0-Gz-LX7" id="P7y-ta-wuv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Journal of ITS Issues" id="Sew-X5-4vL">
+                    <navigationItem key="navigationItem" title="The Journal of ITS: Issues" id="Sew-X5-4vL">
                         <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="fTL-gM-JMh">
                             <connections>
                                 <action selector="tappedCancelButton:" destination="bG0-Gz-LX7" id="OYM-DW-TFA"/>
@@ -224,43 +224,35 @@ The Journal of ITS is a bimonthly circulation available to BICSI members at no a
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="20" y="250" width="728" height="42"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="Loaded by the Second View Controller — an instance of SecondViewController — specified in the app delegate." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="235" y="350" width="297" height="70"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="297" id="IyQ-6U-9uS"/>
-                                    <constraint firstAttribute="height" constant="70" id="OL4-RV-e9h"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" size="system"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textView>
                             <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ej5-n5-O85">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                                 <items>
                                     <navigationItem id="WaP-O7-m87"/>
                                 </items>
                             </navigationBar>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2GS-ya-XTZ">
+                                <rect key="frame" x="0.0" y="44" width="768" height="932"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="1VE-I6-IhJ">
+                                <rect key="frame" x="374" y="500" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="zEq-FU-wV5" secondAttribute="trailing" constant="20" symbolic="YES" id="1Sm-Ed-d0Z"/>
                             <constraint firstItem="ej5-n5-O85" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailing" id="C9p-N0-R4o"/>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" constant="235" id="ILQ-Iy-aLh"/>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" constant="350" id="WdQ-18-vtZ"/>
-                            <constraint firstItem="zEq-FU-wV5" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" constant="250" id="YLo-4G-u9r"/>
                             <constraint firstItem="ej5-n5-O85" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="ZQW-8Y-bT4"/>
                             <constraint firstItem="ej5-n5-O85" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" id="dYc-7R-70W"/>
-                            <constraint firstItem="zEq-FU-wV5" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" constant="20" symbolic="YES" id="uRE-52-21w"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Info" image="second" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="activity" destination="1VE-I6-IhJ" id="m3x-Np-cCc"/>
+                        <outlet property="webView" destination="2GS-ya-XTZ" id="nm5-G4-aSX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -269,7 +261,7 @@ The Journal of ITS is a bimonthly circulation available to BICSI members at no a
         <!--Pop View Controller - BICSI Log In-->
         <scene sceneID="hvj-Ry-iIv">
             <objects>
-                <viewController id="zgh-mf-kAF" customClass="popViewController" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="zgh-mf-kAF" customClass="popViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qQU-Fc-FFm"/>
                         <viewControllerLayoutGuide type="bottom" id="sQ6-tt-cC1"/>
@@ -281,14 +273,14 @@ The Journal of ITS is a bimonthly circulation available to BICSI members at no a
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YHo-ms-HnX">
                                 <rect key="frame" x="135" y="138" width="447" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kqk-4a-CTn">
                                 <rect key="frame" x="135" y="208" width="447" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
@@ -305,7 +297,6 @@ The Journal of ITS is a bimonthly circulation available to BICSI members at no a
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.89411771299999998" green="0.94117653369999998" blue="1" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="BICSI Log In" id="ftT-DO-c3h"/>
                     <connections>
