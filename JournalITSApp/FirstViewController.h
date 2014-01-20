@@ -7,13 +7,27 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "popViewController.h"
+
+@class Reachability;
 
 @interface FirstViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+{
+    popViewController *popupView;
+    Reachability *internetReach;
+    
+}
 
 @property (nonatomic, strong) NSMutableArray * json;
 @property (nonatomic, strong) NSMutableArray * jitsArray;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UIButton *loginButton;
+@property (nonatomic, retain) UIPopoverController *listPopover;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) IBOutlet UITextView *jitsTextView;
 - (IBAction)readSampleIssue:(id)sender;
+//- (IBAction)loginClicked:(id)sender;
 
 -(void) retrieveData;
 

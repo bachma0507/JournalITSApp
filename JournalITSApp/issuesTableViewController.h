@@ -10,4 +10,15 @@
 
 @interface issuesTableViewController : UITableViewController
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
+
+
+@property (nonatomic, strong) NSMutableArray * json;
+@property (nonatomic, strong) NSMutableArray * jitsArray;
+@property (strong, nonatomic) IBOutlet UIProgressView *progressView;
+
+
+
+-(void) retrieveData;
+
 @end

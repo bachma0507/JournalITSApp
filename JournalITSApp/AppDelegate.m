@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "Reachability.h"
+
 
 @implementation AppDelegate
 
@@ -21,6 +23,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(reachabilityChanged:) name: kReachabilityChangedNotification object: nil];
+    
     return YES;
 }
 							
@@ -44,11 +49,68 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    internetReach = [Reachability reachabilityForInternetConnection];
+    [internetReach startNotifier];
+    
+    NetworkStatus netStatus = [internetReach currentReachabilityStatus];
+    
+    switch (netStatus)
+    {
+        case ReachableViaWWAN:
+        {
+            break;
+        }
+        case ReachableViaWiFi:
+        {
+            break;
+        }
+        case NotReachable:
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alert" message:@"We are unable to make an internet connection at this time. Some functionality will be limited until a connection is made." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            [alert show];
+            //[alert release];
+            break;
+        }
+            
+    }
+
+    
+    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+//Called by Reachability whenever status changes.
+- (void) reachabilityChanged: (NSNotification* )note
+{
+    printf("Reachability"); //maaj code 062313
+    Reachability* curReach = [note object];
+    NSParameterAssert([curReach isKindOfClass: [Reachability class]]);
+    
+    NetworkStatus netStatus = [curReach currentReachabilityStatus];
+    switch (netStatus)
+    {
+        case ReachableViaWWAN:
+        {
+            break;
+        }
+        case ReachableViaWiFi:
+        {
+            break;
+        }
+        case NotReachable:
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alert" message:@"We are unable to make an internet connection at this time. Some functionality will be limited until a connection is made." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            [alert show];
+            //[alert release];
+            break;
+        }
+    }
+    
+}
+
 
 @end

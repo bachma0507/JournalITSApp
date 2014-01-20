@@ -12,19 +12,20 @@
 #import "AppDelegate.h"
 #import "ReaderViewController.h"
 #import "jitsTableViewCell.h"
+#import "Reachability.h"
 
 @interface FirstViewController ()<UITableViewDelegate, UITableViewDataSource, DownloadManagerDelegate, ReaderViewControllerDelegate>
 
-@property (strong, nonatomic) DownloadManager *downloadManager;
-@property (strong, nonatomic) NSDate *startDate;
-@property (nonatomic) NSInteger downloadErrorCount;
-@property (nonatomic) NSInteger downloadSuccessCount;
+//@property (strong, nonatomic) DownloadManager *downloadManager;
+//@property (strong, nonatomic) NSDate *startDate;
+//@property (nonatomic) NSInteger downloadErrorCount;
+//@property (nonatomic) NSInteger downloadSuccessCount;
 
 @end
 
 @implementation FirstViewController
 
-@synthesize json, jitsArray;
+@synthesize json, jitsArray, loginButton, imageView, jitsTextView;
 
 #pragma mark Constants
 
@@ -36,10 +37,27 @@
 {
     [super viewDidLoad];
     
+    
+    
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"cellbkgnd.jpg"]]];
+    
+    CALayer *layer = imageView.layer;
+    layer.masksToBounds = NO;
+    layer.shadowRadius = 3.0f;
+    layer.shadowOffset = CGSizeMake(0.0f, 2.0f);
+    layer.shadowOpacity = 0.5f;
+    layer.shouldRasterize = YES;
+    
+    [[jitsTextView layer] setBorderColor:[[UIColor colorWithRed:48/256.0 green:134/256.0 blue:174/256.0 alpha:1.0] CGColor]];
+    [[jitsTextView layer] setBorderWidth:2.3];
+    [[jitsTextView layer] setCornerRadius:10];
+    [jitsTextView setClipsToBounds: YES];
+
+    
     [self retrieveData];
     
-    self.downloadManager = [[DownloadManager alloc] initWithDelegate:self];
-    self.downloadManager.maxConcurrentDownloads = 4;
+//    self.downloadManager = [[DownloadManager alloc] initWithDelegate:self];
+//    self.downloadManager.maxConcurrentDownloads = 4;
 }
 
 - (IBAction)readSampleIssue:(id)sender {
@@ -76,6 +94,38 @@
     
 }
 
+//-(void)rowSelected:(NSString*)str
+//{
+//    // self.monster = curSelection;
+//    
+//    if (self.listPopover != nil) {
+//        [self.listPopover dismissPopoverAnimated:YES];
+//    }
+//    
+//    // [self refresh];
+//}
+//
+//
+//- (IBAction)loginClicked:(id)sender {
+//    
+//    popupView = [[popViewController alloc]init];
+//    self.listPopover = [[UIPopoverController alloc]initWithContentViewController:popupView];
+//    [self.listPopover presentPopoverFromRect:CGRectMake(0, 0, 300, 300) inView:loginButton permittedArrowDirections:UIPopoverArrowDirectionDown animated:YES];
+//    
+//}
+
+//- (void) alertStatus:(NSString *)msg :(NSString *)title :(int) tag
+//{
+//    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
+//                                                        message:msg
+//                                                       delegate:self
+//                                              cancelButtonTitle:@"Ok"
+//                                              otherButtonTitles:nil, nil];
+//    alertView.tag = tag;
+//    [alertView show];
+//    
+//}
+
 #pragma mark ReaderViewControllerDelegate methods
 
 - (void)dismissReaderViewController:(ReaderViewController *)viewController
@@ -94,6 +144,19 @@
 
 -(void)retrieveData
 {
+    
+    //CHECK TO SEE IF INTERNET CONNECTION IS AVAILABLE
+    internetReach = [Reachability reachabilityForInternetConnection];
+    [internetReach startNotifier];
+    
+    NetworkStatus netStatus = [internetReach currentReachabilityStatus];
+    
+    //If internet connection not available then do not delete objects
+    if (netStatus == NotReachable) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alert" message:@"No internet connection. Data cannot be downloaded until a connection is made." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+    }
+    else {
     
     NSURL *url = [NSURL URLWithString:@"http://speedyreference.com/jits.php"];
     NSData * data = [NSData dataWithContentsOfURL:url];
@@ -118,7 +181,7 @@
         //Add object to Array
         [jitsArray addObject:myJits];
     }
-    
+    }
     [self.tableView reloadData];
 }
 
@@ -157,6 +220,7 @@
                 reuseIdentifier:CellIdentifier];
     }
     
+    cell.backgroundView = [[UIImageView alloc] initWithImage:[ [UIImage imageNamed:@"cellbkgnd.jpg"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:5.0]];
     
     jits * jitsInstance = nil;
     
@@ -173,8 +237,33 @@
     
     cell.coverimage.image = myImage;
     
+    CALayer *layer = cell.coverimage.layer;
+    layer.masksToBounds = NO;
+    layer.shadowRadius = 3.0f;
+    layer.shadowOffset = CGSizeMake(0.0f, 2.0f);
+    layer.shadowOpacity = 0.5f;
+    layer.shouldRasterize = YES;
+    
+    
     return cell;
 
+}
+
+- (UIImage *)cellBackgroundForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //NSInteger rowCount = [self tableView:[self tableView] numberOfRowsInSection:0];
+    //NSInteger rowIndex = indexPath.row;
+    UIImage *background = [UIImage imageNamed:@"cellbkgnd.jpg"];
+    
+//    if (rowIndex == 0) {
+//        background = [UIImage imageNamed:@"cell_top.png"];
+//    } else if (rowIndex == rowCount - 1) {
+//        background = [UIImage imageNamed:@"cell_bottom.png"];
+//    } else {
+//        background = [UIImage imageNamed:@"cell_middle.png"];
+//    }
+    
+    return background;
 }
 
 /*
