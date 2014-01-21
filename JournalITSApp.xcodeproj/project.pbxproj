@@ -72,6 +72,7 @@
 		4CF6FB72188CA27400E2A539 /* cellbkgnd.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4CF6FB71188CA27400E2A539 /* cellbkgnd.jpg */; };
 		4CF6FB76188CC97F00E2A539 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6FB75188CC97F00E2A539 /* Reachability.m */; };
 		4CF6FB7C188D79BD00E2A539 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6FB7B188D79BD00E2A539 /* KeychainItemWrapper.m */; };
+		4CF6FB80188ED8BD00E2A539 /* KKProgressToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6FB7F188ED8BD00E2A539 /* KKProgressToolbar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -185,6 +186,8 @@
 		4CF6FB75188CC97F00E2A539 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		4CF6FB7A188D79BD00E2A539 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
 		4CF6FB7B188D79BD00E2A539 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
+		4CF6FB7E188ED8BD00E2A539 /* KKProgressToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKProgressToolbar.h; sourceTree = "<group>"; };
+		4CF6FB7F188ED8BD00E2A539 /* KKProgressToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKProgressToolbar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +253,7 @@
 		4CF6F96718846BBB00E2A539 /* JournalITSApp */ = {
 			isa = PBXGroup;
 			children = (
+				4CF6FB7D188ED89200E2A539 /* KKProgressToolbar */,
 				4CF6FB73188CC96500E2A539 /* Classes */,
 				4CF6FB70188CA26700E2A539 /* images */,
 				4CF6FB0C188BB48100E2A539 /* Reader */,
@@ -408,6 +412,15 @@
 			name = Classes;
 			sourceTree = "<group>";
 		};
+		4CF6FB7D188ED89200E2A539 /* KKProgressToolbar */ = {
+			isa = PBXGroup;
+			children = (
+				4CF6FB7E188ED8BD00E2A539 /* KKProgressToolbar.h */,
+				4CF6FB7F188ED8BD00E2A539 /* KKProgressToolbar.m */,
+			);
+			name = KKProgressToolbar;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -552,6 +565,7 @@
 				4CF6FB64188BB4E600E2A539 /* UIXToolbarView.m in Sources */,
 				4CF6FB44188BB4E500E2A539 /* CGPDFDocument.m in Sources */,
 				4CF6F96E18846BBB00E2A539 /* main.m in Sources */,
+				4CF6FB80188ED8BD00E2A539 /* KKProgressToolbar.m in Sources */,
 				4CF6FB57188BB4E600E2A539 /* ReaderDocument.m in Sources */,
 				4CF6FB76188CC97F00E2A539 /* Reachability.m in Sources */,
 				4CF6FB5E188BB4E600E2A539 /* ReaderThumbRequest.m in Sources */,
