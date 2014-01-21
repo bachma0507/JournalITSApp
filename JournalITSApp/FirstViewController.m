@@ -25,7 +25,7 @@
 
 @implementation FirstViewController
 
-@synthesize json, jitsArray, loginButton, imageView, jitsTextView;
+@synthesize json, jitsArray, loginButton, imageView, jitsTextView, sortedArray;
 
 #pragma mark Constants
 
@@ -157,10 +157,9 @@
         [alert show];
     }
     else {
-    
+        
     NSURL *url = [NSURL URLWithString:@"http://speedyreference.com/jits.php"];
     NSData * data = [NSData dataWithContentsOfURL:url];
-    
     
     json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
     
@@ -180,8 +179,17 @@
         
         //Add object to Array
         [jitsArray addObject:myJits];
-    }
-    }
+        
+        //NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"jitsid" ascending:NO];
+        //sortedArray = [self.jitsArray sortedArrayUsingDescriptors:[NSArray arrayWithObjects:descriptor,nil]];
+        
+        
+    }//end for
+        
+        
+}//end else
+                   
+                   
     [self.tableView reloadData];
 }
 
@@ -230,13 +238,19 @@
     
     NSString * myCoverURL = [NSString stringWithFormat:@"%@", jitsInstance.coverimage];
     
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
+    
+    dispatch_async(queue, ^{
+    
     UIImage* myImage = [UIImage imageWithData:
                         [NSData dataWithContentsOfURL:
                          [NSURL URLWithString: myCoverURL]]];
     
-    
+    dispatch_sync(dispatch_get_main_queue(), ^{
     cell.coverimage.image = myImage;
-    
+    });
+    });
+        
     CALayer *layer = cell.coverimage.layer;
     layer.masksToBounds = NO;
     layer.shadowRadius = 3.0f;

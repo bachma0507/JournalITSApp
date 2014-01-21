@@ -15,6 +15,7 @@
 
 @property (nonatomic, strong) NSMutableArray * json;
 @property (nonatomic, strong) NSMutableArray * jitsArray;
+@property (nonatomic, strong) NSArray * sortedArray;
 @property (strong, nonatomic) IBOutlet UIProgressView *progressView;
 
 

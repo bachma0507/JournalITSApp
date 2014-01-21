@@ -21,6 +21,7 @@
 
 @property (nonatomic, strong) NSMutableArray * json;
 @property (nonatomic, strong) NSMutableArray * jitsArray;
+@property (nonatomic, strong) NSArray * sortedArray;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UIButton *loginButton;
 @property (nonatomic, retain) UIPopoverController *listPopover;

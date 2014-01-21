@@ -25,7 +25,7 @@
 
 @implementation issuesTableViewController
 
-@synthesize json, jitsArray, progressView;
+@synthesize json, jitsArray, progressView, sortedArray;
 
 #pragma mark Constants
 
@@ -50,7 +50,7 @@
     [self retrieveData];
     
     self.downloadManager = [[DownloadManager alloc] initWithDelegate:self];
-    self.downloadManager.maxConcurrentDownloads = 4;
+    self.downloadManager.maxConcurrentDownloads = 10;
     
     self.cancelButton.enabled = NO;
     [progressView setHidden:YES];
@@ -84,6 +84,9 @@
         
         //Add object to Array
         [jitsArray addObject:myJits];
+        
+        //NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"jitsid" ascending:YES];
+        //sortedArray = [self.jitsArray sortedArrayUsingDescriptors:[NSArray arrayWithObjects:descriptor,nil]];
     }
     
     [self.tableView reloadData];
@@ -182,6 +185,8 @@
 {
     
     return[jitsArray count];
+    
+    NSLog(@"jitsArray count = %lu", (unsigned long)jitsArray.count);
 }
 
 
@@ -206,14 +211,29 @@
     
     cell.issue.text = jitsInstance.issue;
     
+    NSLog(@"jitsid = %@", jitsInstance.jitsid);
+    
     NSString * myCoverURL = [NSString stringWithFormat:@"%@", jitsInstance.coverimage];
     
-    UIImage* myImage = [UIImage imageWithData:
-                        [NSData dataWithContentsOfURL:
-                         [NSURL URLWithString: myCoverURL]]];
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
     
+    dispatch_async(queue, ^{
+        
+        UIImage* myImage = [UIImage imageWithData:
+                            [NSData dataWithContentsOfURL:
+                             [NSURL URLWithString: myCoverURL]]];
+        
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            cell.coverimage.image = myImage;
+        });
+    });
     
-    cell.coverimage.image = myImage;
+    CALayer *layer = cell.coverimage.layer;
+    layer.masksToBounds = NO;
+    layer.shadowRadius = 3.0f;
+    layer.shadowOffset = CGSizeMake(0.0f, 2.0f);
+    layer.shadowOpacity = 0.5f;
+    layer.shouldRasterize = YES;
     
     [progressView setProgress:0];
     [progressView setHidden:YES];
