@@ -12,6 +12,7 @@
 #import "jits.h"
 #import "AppDelegate.h"
 #import "ReaderViewController.h"
+//#import "MBProgressHUD.h"
 
 @interface issuesTableViewController () <DownloadManagerDelegate, ReaderViewControllerDelegate>
 
@@ -56,7 +57,12 @@
     [progressView setHidden:YES];
     
     [self.navigationItem setHidesBackButton:YES];
+    
 
+}
+
+- (void)waitForSevenSeconds {
+    sleep(7);
 }
 
 -(void)retrieveData
@@ -261,6 +267,8 @@
     else if (fileExists){
         NSLog(@"File exist!");
         cell.TapLabel.text = @"Tap to Read";
+        cell.TapLabel.font = [UIFont systemFontOfSize:14.0];
+        cell.TapLabel.textColor = [UIColor whiteColor];
         cell.TapLabel.alpha = 1.0;
         cell.TapLabel.hidden = NO;
     }
@@ -270,11 +278,11 @@
     
 }
 
-//- (UIImage *)cellBackgroundForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
+- (UIImage *)cellBackgroundForRowAtIndexPath:(NSIndexPath *)indexPath
+{
 //    //NSInteger rowCount = [self tableView:[self tableView] numberOfRowsInSection:0];
 //    //NSInteger rowIndex = indexPath.row;
-//    UIImage *background = [UIImage imageNamed:@"cellbkgnd.jpg"];
+    UIImage *background = [UIImage imageNamed:@"cellbkgnd.jpg"];
 //    
 //    //    if (rowIndex == 0) {
 //    //        background = [UIImage imageNamed:@"cell_top.png"];
@@ -284,8 +292,8 @@
 //    //        background = [UIImage imageNamed:@"cell_middle.png"];
 //    //    }
 //    
-//    return background;
-//}
+    return background;
+}
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -317,6 +325,16 @@
         self.startDate = [NSDate date];
         //cell.TapLabel.hidden = YES;
         cell.TapLabel.text = @"Downloading...";
+        cell.TapLabel.textColor = [UIColor redColor];
+        cell.TapLabel.font = [UIFont systemFontOfSize:14.0];
+        
+//        HUD = [[MBProgressHUD alloc] initWithView:self.view];
+//        HUD.labelText = @"Downloading...";
+//        //HUD.detailsLabelText = @"Just relax";
+//        HUD.mode = MBProgressHUDAnimationFade;
+//        //HUD.mode = MBProgressHUDModeDeterminateHorizontalBar;
+//        [self.view addSubview:HUD];
+//        [HUD showWhileExecuting:@selector(waitForSevenSeconds) onTarget:self withObject:nil animated:YES];
         
         
         [self.downloadManager start];

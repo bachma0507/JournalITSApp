@@ -281,8 +281,10 @@
 	CGSize size = [thumbCell maximumContentSize]; // Get the cell's maximum content size
 
 	NSInteger page = (showBookmarked ? [[bookmarked objectAtIndex:index] integerValue] : (index + 1));
+    
+    [thumbCell showText:[NSString stringWithFormat:@"%li", (long)page]]; // Page number place holder
 
-	[thumbCell showText:[NSString stringWithFormat:@"%i", page]]; // Page number place holder
+	//[thumbCell showText:[NSString stringWithFormat:@"%i", page]]; // Page number place holder
 
 	[thumbCell showBookmark:[document.bookmarks containsIndex:page]]; // Show bookmarked status
 

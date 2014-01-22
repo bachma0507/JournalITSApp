@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+//@class MBProgressHUD;
+
 @interface issuesTableViewController : UITableViewController
+//{
+//    MBProgressHUD *HUD;
+//}
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
 
