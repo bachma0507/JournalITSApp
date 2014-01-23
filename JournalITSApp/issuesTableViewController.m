@@ -209,7 +209,7 @@
                 reuseIdentifier:CellIdentifier];
     }
     
-    cell.backgroundView = [[UIImageView alloc] initWithImage:[ [UIImage imageNamed:@"cellbkgnd.jpg"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:5.0]];
+    cell.backgroundView = [[UIImageView alloc] initWithImage:[ [UIImage imageNamed:@"bkgnd2.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:5.0]];
     
     jits * jitsInstance = nil;
     
@@ -267,7 +267,7 @@
     else if (fileExists){
         NSLog(@"File exist!");
         cell.TapLabel.text = @"Tap to Read";
-        cell.TapLabel.font = [UIFont systemFontOfSize:14.0];
+        cell.TapLabel.font = [UIFont systemFontOfSize:17.0];
         cell.TapLabel.textColor = [UIColor whiteColor];
         cell.TapLabel.alpha = 1.0;
         cell.TapLabel.hidden = NO;
@@ -282,7 +282,7 @@
 {
 //    //NSInteger rowCount = [self tableView:[self tableView] numberOfRowsInSection:0];
 //    //NSInteger rowIndex = indexPath.row;
-    UIImage *background = [UIImage imageNamed:@"cellbkgnd.jpg"];
+    UIImage *background = [UIImage imageNamed:@"bkgnd2.png"];
 //    
 //    //    if (rowIndex == 0) {
 //    //        background = [UIImage imageNamed:@"cell_top.png"];
@@ -326,7 +326,7 @@
         //cell.TapLabel.hidden = YES;
         cell.TapLabel.text = @"Downloading...";
         cell.TapLabel.textColor = [UIColor redColor];
-        cell.TapLabel.font = [UIFont systemFontOfSize:14.0];
+        cell.TapLabel.font = [UIFont systemFontOfSize:17.0];
         
 //        HUD = [[MBProgressHUD alloc] initWithView:self.view];
 //        HUD.labelText = @"Downloading...";
@@ -400,6 +400,64 @@
 	[self dismissViewControllerAnimated:YES completion:NULL];
     
 #endif // DEMO_VIEW_CONTROLLER_PUSH
+}
+
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return YES if you want the specified item to be editable.
+    return YES;
+}
+
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        //add code here for when you hit delete
+        
+        
+        //}
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        
+        jits * jitsInstance = nil;
+        
+        jitsInstance = [jitsArray objectAtIndex:indexPath.row];
+        
+        NSString * myURL = [NSString stringWithFormat:@"%@", jitsInstance.url];
+        
+        NSString* documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+        NSString *downloadFolder = [documentsPath stringByAppendingPathComponent:@"downloads"];
+        
+        NSString * fileName = [[NSString alloc]initWithFormat:@"%@", [myURL lastPathComponent]];
+        
+        NSString* foofile = [downloadFolder stringByAppendingPathComponent:fileName];
+        
+        NSError *error;
+        
+        BOOL success =[fileManager removeItemAtPath:foofile error:&error];
+        if (success) {
+            UIAlertView *removeSuccessFulAlert=[[UIAlertView alloc]initWithTitle:@"Notification:" message:@"File has been deleted from your device." delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil];
+            [removeSuccessFulAlert show];
+            
+        }
+        else
+        {
+            NSLog(@"Could not delete file -:%@ ",[error localizedDescription]);
+        }
+        
+        
+    }
+    jitsTableViewCell *cell = (jitsTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+    
+    if ([cell.TapLabel.text isEqual: @"Tap to Download"]) {
+        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Notification:" message:@"File has not been downloaded and therefore cannot be deleted." delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil];
+        [alert show];
+        
+    }
+    else{
+    NSMutableArray *array = [self.jitsArray mutableCopy];
+    [array removeObjectAtIndex:indexPath.row];
+    self.jitsArray = array;
+    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
 }
 
 

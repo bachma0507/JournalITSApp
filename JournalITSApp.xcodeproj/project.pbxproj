@@ -72,6 +72,8 @@
 		4CF6FB72188CA27400E2A539 /* cellbkgnd.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4CF6FB71188CA27400E2A539 /* cellbkgnd.jpg */; };
 		4CF6FB76188CC97F00E2A539 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6FB75188CC97F00E2A539 /* Reachability.m */; };
 		4CF6FB7C188D79BD00E2A539 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6FB7B188D79BD00E2A539 /* KeychainItemWrapper.m */; };
+		4CF6FB8618909DC300E2A539 /* bkgnd2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CF6FB8518909DC300E2A539 /* bkgnd2.png */; };
+		4CF6FB881890A82E00E2A539 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF6FB871890A82D00E2A539 /* Security.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -185,6 +187,8 @@
 		4CF6FB75188CC97F00E2A539 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		4CF6FB7A188D79BD00E2A539 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
 		4CF6FB7B188D79BD00E2A539 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
+		4CF6FB8518909DC300E2A539 /* bkgnd2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bkgnd2.png; sourceTree = "<group>"; };
+		4CF6FB871890A82D00E2A539 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +196,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CF6FB881890A82E00E2A539 /* Security.framework in Frameworks */,
 				4CF6FB04188BB40600E2A539 /* ImageIO.framework in Frameworks */,
 				4CF6FB02188BB40000E2A539 /* MessageUI.framework in Frameworks */,
 				4CF6FB00188BB3F900E2A539 /* QuartzCore.framework in Frameworks */,
@@ -236,6 +241,7 @@
 		4CF6F96018846BBB00E2A539 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4CF6FB871890A82D00E2A539 /* Security.framework */,
 				4CF6FB03188BB40600E2A539 /* ImageIO.framework */,
 				4CF6FB01188BB40000E2A539 /* MessageUI.framework */,
 				4CF6FAFF188BB3F900E2A539 /* QuartzCore.framework */,
@@ -250,6 +256,7 @@
 		4CF6F96718846BBB00E2A539 /* JournalITSApp */ = {
 			isa = PBXGroup;
 			children = (
+				4CF6FB841890252600E2A539 /* StoryBoard */,
 				4CF6FB73188CC96500E2A539 /* Classes */,
 				4CF6FB70188CA26700E2A539 /* images */,
 				4CF6FB0C188BB48100E2A539 /* Reader */,
@@ -259,7 +266,6 @@
 				4CF6FAF4188BAC8600E2A539 /* Resources */,
 				4CF6F97018846BBB00E2A539 /* AppDelegate.h */,
 				4CF6F97118846BBB00E2A539 /* AppDelegate.m */,
-				4CF6F97318846BBB00E2A539 /* Main.storyboard */,
 				4CF6F97618846BBB00E2A539 /* FirstViewController.h */,
 				4CF6F97718846BBB00E2A539 /* FirstViewController.m */,
 				4CF6F97918846BBB00E2A539 /* SecondViewController.h */,
@@ -392,6 +398,7 @@
 		4CF6FB70188CA26700E2A539 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				4CF6FB8518909DC300E2A539 /* bkgnd2.png */,
 				4CF6FB71188CA27400E2A539 /* cellbkgnd.jpg */,
 			);
 			name = images;
@@ -406,6 +413,14 @@
 				4CF6FB75188CC97F00E2A539 /* Reachability.m */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		4CF6FB841890252600E2A539 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				4CF6F97318846BBB00E2A539 /* Main.storyboard */,
+			);
+			name = StoryBoard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -492,6 +507,7 @@
 				4CF6FAF8188BACEE00E2A539 /* Sample Issue.pdf in Resources */,
 				4CF6F97D18846BBB00E2A539 /* Images.xcassets in Resources */,
 				4CF6FB52188BB4E600E2A539 /* Reader-Thumbs@2x.png in Resources */,
+				4CF6FB8618909DC300E2A539 /* bkgnd2.png in Resources */,
 				4CF6FB66188BB4F200E2A539 /* Localizable.strings in Resources */,
 				4CF6FB4B188BB4E600E2A539 /* Reader-Mark-N.png in Resources */,
 				4CF6FB48188BB4E500E2A539 /* Reader-Button-N@2x.png in Resources */,

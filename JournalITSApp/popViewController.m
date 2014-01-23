@@ -10,7 +10,9 @@
 #import "KeychainItemWrapper.h"
 
 @interface popViewController ()
-
+{
+    KeychainItemWrapper *keychainItem;
+}
 
 @end
 
@@ -30,9 +32,42 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"cellbkgnd.jpg"]]];
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bkgnd2.png"]]];
+    
+    keychainItem = [[KeychainItemWrapper alloc] initWithIdentifier:@"BICSIlogin" accessGroup:nil];
+    NSString *password = [keychainItem objectForKey:(__bridge id)(kSecValueData)];
+    NSLog(@"Keychain password = %@", password);
+    NSString *username = [keychainItem objectForKey:(__bridge id)(kSecAttrAccount)];
+    NSLog(@"Keychain username = %@", username);
+    if ([username isEqualToString:@""]) {
+        NSLog(@"Username or password is null");
+    }
+    else
+        {
+    [self.txtUsername setText:[keychainItem objectForKey:(__bridge id)(kSecAttrAccount)]];
+    //[self.txtPassword setText:[keychainItem objectForKey:(__bridge id)(kSecValueData)]];
+        }
 
 }
+
+//-(void)viewDidAppear:(BOOL)animated
+//{
+//    animated = YES;
+//    
+//    keychainItem = [[KeychainItemWrapper alloc] initWithIdentifier:@"BICSIlogin" accessGroup:nil];
+//    NSString *password = [keychainItem objectForKey:(__bridge id)(kSecValueData)];
+//    NSLog(@"Keychain password = %@", password);
+//    NSString *username = [keychainItem objectForKey:(__bridge id)(kSecAttrAccount)];
+//    NSLog(@"Keychain username = %@", username);
+//    
+//    BOOL isLogged = ([username length] > 0 && [password length] > 0);
+//    
+//    if (isLogged) {
+//        [self performSegueWithIdentifier:@"login_success" sender:self];
+//    }
+//
+//    
+//}
 
 - (void)didReceiveMemoryWarning
 {
@@ -47,12 +82,16 @@
     NSInteger success = 0;
     @try {
         
+        //KeychainItemWrapper *keychainItem = [[KeychainItemWrapper alloc] initWithIdentifier:@"BICSIlogin" accessGroup:nil];
+        
         
         if([[self.txtUsername text] isEqualToString:@""] || [[self.txtPassword text] isEqualToString:@""] ) {
             
             [self alertStatus:@"Please enter Email and Password" :@"Sign in Failed!" :0];
             
         } else {
+            
+            
             NSString *post =[[NSString alloc] initWithFormat:@"username=%@&password=%@",[self.txtUsername text],[self.txtPassword text]];
             NSLog(@"PostData: %@",post);
             
@@ -95,6 +134,8 @@
                 if(success == 1)
                 {
                     NSLog(@"Login SUCCESS");
+                    [keychainItem setObject:[self.txtPassword text] forKey:(__bridge id)(kSecValueData)];
+                    [keychainItem setObject:[self.txtUsername text] forKey:(__bridge id)(kSecAttrAccount)];
                 } else {
                     
                     NSString *error_msg = (NSString *) jsonData[@"error_message"];

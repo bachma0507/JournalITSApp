@@ -39,7 +39,7 @@
     
     
     
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"cellbkgnd.jpg"]]];
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bkgnd2.png"]]];
     
     CALayer *layer = imageView.layer;
     layer.masksToBounds = NO;
@@ -228,7 +228,7 @@
                 reuseIdentifier:CellIdentifier];
     }
     
-    cell.backgroundView = [[UIImageView alloc] initWithImage:[ [UIImage imageNamed:@"cellbkgnd.jpg"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:5.0]];
+    cell.backgroundView = [[UIImageView alloc] initWithImage:[ [UIImage imageNamed:@"bkgnd2.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:5.0]];
     
     jits * jitsInstance = nil;
     
