@@ -209,7 +209,10 @@
                 reuseIdentifier:CellIdentifier];
     }
     
-    cell.backgroundView = [[UIImageView alloc] initWithImage:[ [UIImage imageNamed:@"bkgnd2.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:5.0]];
+    //cell.backgroundView = [[UIImageView alloc] initWithImage:[ [UIImage imageNamed:@"bkgnd2.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:5.0]];
+    
+    
+
     
     jits * jitsInstance = nil;
     
@@ -278,22 +281,17 @@
     
 }
 
-- (UIImage *)cellBackgroundForRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    //NSInteger rowCount = [self tableView:[self tableView] numberOfRowsInSection:0];
-//    //NSInteger rowIndex = indexPath.row;
-    UIImage *background = [UIImage imageNamed:@"bkgnd2.png"];
-//    
-//    //    if (rowIndex == 0) {
-//    //        background = [UIImage imageNamed:@"cell_top.png"];
-//    //    } else if (rowIndex == rowCount - 1) {
-//    //        background = [UIImage imageNamed:@"cell_bottom.png"];
-//    //    } else {
-//    //        background = [UIImage imageNamed:@"cell_middle.png"];
-//    //    }
-//    
-    return background;
+    cell.backgroundColor = [UIColor colorWithRed:52 green:152 blue:219 alpha:0];
 }
+
+//- (UIImage *)cellBackgroundForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//
+//    UIImage *background = [UIImage imageNamed:@"bkgnd2.png"];
+//        return background;
+//}
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -325,7 +323,7 @@
         self.startDate = [NSDate date];
         //cell.TapLabel.hidden = YES;
         cell.TapLabel.text = @"Downloading...";
-        cell.TapLabel.textColor = [UIColor redColor];
+        cell.TapLabel.textColor = [UIColor colorWithRed:243 green:156 blue:18 alpha:1];
         cell.TapLabel.font = [UIFont systemFontOfSize:17.0];
         
 //        HUD = [[MBProgressHUD alloc] initWithView:self.view];

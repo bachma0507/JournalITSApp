@@ -39,7 +39,7 @@
     
     
     
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bkgnd2.png"]]];
+    //[self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bkgnd2.png"]]];
     
     CALayer *layer = imageView.layer;
     layer.masksToBounds = NO;
@@ -48,8 +48,8 @@
     layer.shadowOpacity = 0.5f;
     layer.shouldRasterize = YES;
     
-    [[jitsTextView layer] setBorderColor:[[UIColor colorWithRed:48/256.0 green:134/256.0 blue:174/256.0 alpha:1.0] CGColor]];
-    [[jitsTextView layer] setBorderWidth:2.3];
+    [[jitsTextView layer] setBorderColor:[[UIColor colorWithRed:41/256.0 green:128/256.0 blue:185/256.0 alpha:1.0] CGColor]];
+    [[jitsTextView layer] setBorderWidth:1.3];
     [[jitsTextView layer] setCornerRadius:10];
     [jitsTextView setClipsToBounds: YES];
 
@@ -228,7 +228,7 @@
                 reuseIdentifier:CellIdentifier];
     }
     
-    cell.backgroundView = [[UIImageView alloc] initWithImage:[ [UIImage imageNamed:@"bkgnd2.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:5.0]];
+    //cell.backgroundView = [[UIImageView alloc] initWithImage:[ [UIImage imageNamed:@"bkgnd2.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:5.0]];
     
     jits * jitsInstance = nil;
     
@@ -263,22 +263,14 @@
 
 }
 
-- (UIImage *)cellBackgroundForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    //NSInteger rowCount = [self tableView:[self tableView] numberOfRowsInSection:0];
-    //NSInteger rowIndex = indexPath.row;
-    UIImage *background = [UIImage imageNamed:@"cellbkgnd.jpg"];
-    
-//    if (rowIndex == 0) {
-//        background = [UIImage imageNamed:@"cell_top.png"];
-//    } else if (rowIndex == rowCount - 1) {
-//        background = [UIImage imageNamed:@"cell_bottom.png"];
-//    } else {
-//        background = [UIImage imageNamed:@"cell_middle.png"];
-//    }
-    
-    return background;
-}
+//- (UIImage *)cellBackgroundForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    
+//    UIImage *background = [UIImage imageNamed:@"cellbkgnd.jpg"];
+//    
+//    
+//    return background;
+//}
 
 /*
  // Override to support conditional editing of the table view.

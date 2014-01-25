@@ -32,7 +32,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bkgnd2.png"]]];
+    //[self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bkgnd2.png"]]];
     
     keychainItem = [[KeychainItemWrapper alloc] initWithIdentifier:@"BICSIlogin" accessGroup:nil];
     NSString *password = [keychainItem objectForKey:(__bridge id)(kSecValueData)];
