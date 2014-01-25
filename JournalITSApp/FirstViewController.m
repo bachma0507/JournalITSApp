@@ -33,6 +33,7 @@
 
 #pragma mark UIViewController methods
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -52,6 +53,18 @@
     [[jitsTextView layer] setBorderWidth:1.3];
     [[jitsTextView layer] setCornerRadius:10];
     [jitsTextView setClipsToBounds: YES];
+    
+    //[[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x2980b9)];
+    //[[UINavigationBar appearance] setTranslucent:NO];
+    
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:41.0/255.0 green:128.0/255.0 blue:185.0/255.0 alpha:1.0]];
+    //optional, i don't want my bar to be translucent
+    [self.navigationController.navigationBar setTranslucent:NO];
+
+    //set back button color
+    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], UITextAttributeTextColor,nil] forState:UIControlStateNormal];
+    //set back button arrow color
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
 
     
     [self retrieveData];
