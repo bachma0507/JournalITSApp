@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <PushIOManager/PushIOManager.h>
 
 @class Reachability;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, PushIOManagerDelegate>
 
 {
     Reachability *internetReach;

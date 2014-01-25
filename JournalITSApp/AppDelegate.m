@@ -26,6 +26,13 @@
     
     [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(reachabilityChanged:) name: kReachabilityChangedNotification object: nil];
     
+    [[PushIOManager sharedInstance] setDelegate:self];
+    [[PushIOManager sharedInstance] didFinishLaunchingWithOptions:launchOptions];
+    
+    // Requests a device token from Apple
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert     | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound];
+
+    
     return YES;
 }
 							
@@ -110,6 +117,38 @@
         }
     }
     
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:
+(NSData *)deviceToken
+{
+    [[PushIOManager sharedInstance] didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    [[PushIOManager sharedInstance] didFailToRegisterForRemoteNotificationsWithError:error];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    [[PushIOManager sharedInstance] didReceiveRemoteNotification:userInfo];
+}
+
+- (void)readyForRegistration
+{
+    // If this method is called back, PushIOManager has a proper device token
+    // so now you are ready to register.
+}
+
+- (void)registrationSucceeded
+{
+    // Push IO registration was successful
+}
+
+- (void)registrationFailedWithError:(NSError *)error statusCode:(int)statusCode
+{
+    // Push IO registration failed
 }
 
 
