@@ -57,7 +57,7 @@
     //[[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x2980b9)];
     //[[UINavigationBar appearance] setTranslucent:NO];
     
-    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:41.0/255.0 green:128.0/255.0 blue:185.0/255.0 alpha:1.0]];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:25.0/255.0 green:91.0/255.0 blue:166.0/255.0 alpha:1.0]];
     //optional, i don't want my bar to be translucent
     [self.navigationController.navigationBar setTranslucent:NO];
 

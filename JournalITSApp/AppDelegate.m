@@ -36,7 +36,7 @@
     
     
     
-    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x2980b9)];
+    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x195ba6)];
     //[[UINavigationBar appearance] setTranslucent:NO];
     
     
@@ -50,10 +50,34 @@
                                                            [UIFont fontWithName:@"Arial" size:21.0], NSFontAttributeName, nil]];
 
     
+    UIImage* tabBarBackground = [UIImage imageNamed:@"tabbarflatblue.png"];
+    [[UITabBar appearance] setBackgroundImage:tabBarBackground];
+    
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                       [UIColor whiteColor], UITextAttributeTextColor,
+                                                       nil] forState:UIControlStateNormal];
+    UIColor *titleHighlightedColor = [UIColor /*whiteColor*/colorWithRed:247/255.0 green:185/255.0 blue:15/255.0 alpha:1.0];
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                       titleHighlightedColor, UITextAttributeTextColor,
+                                                       nil] forState:UIControlStateHighlighted];
+    
+    // Assign tab bar item with titles
+    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+    UITabBar *tabBar = tabBarController.tabBar;
+    UITabBarItem *tabBarItem1 = [tabBar.items objectAtIndex:0];
+    UITabBarItem *tabBarItem2 = [tabBar.items objectAtIndex:1];
+    
+    tabBarItem1.selectedImage = [[UIImage imageNamed:@"home_tab_icon_selected.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
+    tabBarItem1.image = [[UIImage imageNamed:@"home_tab_icon_unselected.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
+    tabBarItem1.title = @"Home";
+    
+    tabBarItem2.selectedImage = [[UIImage imageNamed:@"news_tab_icon_selected.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
+    tabBarItem2.image = [[UIImage imageNamed:@"news_tab_icon_unselected.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
+    tabBarItem2.title = @"Info";
     
     return YES;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

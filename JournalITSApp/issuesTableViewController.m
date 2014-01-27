@@ -26,7 +26,7 @@
 
 @implementation issuesTableViewController
 
-@synthesize json, jitsArray, progressView, sortedArray;
+@synthesize json, jitsArray, progressView, sortedArray, cancelButton;
 
 #pragma mark Constants
 
@@ -54,6 +54,8 @@
     self.downloadManager.maxConcurrentDownloads = 10;
     
     self.cancelButton.enabled = NO;
+    
+    
     [progressView setHidden:YES];
     
     [self.navigationItem setHidesBackButton:YES];
@@ -317,6 +319,7 @@
         NSLog(@"downloadFilename is:%@", downloadFilename);
         
         [self.downloadManager addDownloadWithFilename:downloadFilename URL:url];
+        
         
         self.cancelButton.enabled = YES;
         [progressView setHidden:NO];
