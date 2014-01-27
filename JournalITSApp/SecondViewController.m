@@ -26,6 +26,8 @@
     NSURL *fullUrl = [NSURL URLWithString:httpSource];
     NSURLRequest *httpRequest = [NSURLRequest requestWithURL:fullUrl];
     [webView loadRequest:httpRequest];
+    
+    [self.navigationController.navigationBar setTranslucent:NO];
 }
 
 -(void)webViewDidStartLoad:(UIWebView *)WebView

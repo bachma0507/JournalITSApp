@@ -35,8 +35,9 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="226" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="2eg-9V-gtv">
                                 <rect key="frame" x="0.0" y="308" width="768" height="602"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="sectionIndexTrackingBackgroundColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.29803921568627451" green="0.63137254901960782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.29803921568627451" green="0.63137254901960782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexTrackingBackgroundColor" red="0.29803921568627451" green="0.63137254901960782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DownloadCell" rowHeight="226" id="uAn-fI-hhH" customClass="jitsTableViewCell">
                                         <rect key="frame" x="0.0" y="22" width="768" height="226"/>
@@ -64,9 +65,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.29803921568627451" green="0.63137254901960782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.29803921568627451" green="0.63137254901960782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="coverimage" destination="ePn-O0-Zhu" id="rmc-rY-8Ux"/>
                                             <outlet property="issue" destination="AZI-1e-G9p" id="cAi-pM-27Q"/>
@@ -124,7 +125,8 @@ The Journal of ITS is a bimonthly circulation available to BICSI Members at no a
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.20392156862745098" green="0.59607843137254901" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.29803921568627451" green="0.63137254901960782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.29803921568627451" green="0.63137254901960782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="Home" image="first" id="acW-dT-cKf"/>
@@ -147,9 +149,10 @@ The Journal of ITS is a bimonthly circulation available to BICSI Members at no a
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="226" sectionHeaderHeight="22" sectionFooterHeight="22" id="CAR-B6-Ysl">
                         <rect key="frame" x="0.0" y="64" width="768" height="911"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.29803921570000003" green="0.63137254899999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.29803921570000003" green="0.63137254899999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="sectionIndexTrackingBackgroundColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexTrackingBackgroundColor" red="0.29803921568627451" green="0.63137254901960782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DownloadCell" rowHeight="226" id="4qz-dz-chP" customClass="jitsTableViewCell">
                                 <rect key="frame" x="0.0" y="22" width="768" height="226"/>
@@ -178,7 +181,7 @@ The Journal of ITS is a bimonthly circulation available to BICSI Members at no a
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.34901960780000002" green="0.76862745099999996" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.29803921568627451" green="0.63137254901960782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="TapLabel" destination="mKe-Xv-0FJ" id="pLS-JQ-gmQ"/>
                                     <outlet property="coverimage" destination="0a3-Yv-4iZ" id="1DK-ru-W2D"/>
@@ -207,6 +210,22 @@ The Journal of ITS is a bimonthly circulation available to BICSI Members at no a
             </objects>
             <point key="canvasLocation" x="5441" y="-892"/>
         </scene>
+        <!--Navigation Controller - Info-->
+        <scene sceneID="Wh7-Kk-Lkk">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="Amz-8v-JCf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Info" id="4Ir-OZ-9Gy"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NSU-qm-Ncb">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="wab-M1-Lcs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iZZ-9k-waf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2752" y="469"/>
+        </scene>
         <!--Second View Controller - Info-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
@@ -216,7 +235,7 @@ The Journal of ITS is a bimonthly circulation available to BICSI Members at no a
                         <viewControllerLayoutGuide type="bottom" id="6dt-R5-lAr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="911"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ej5-n5-O85">
@@ -226,7 +245,7 @@ The Journal of ITS is a bimonthly circulation available to BICSI Members at no a
                                 </items>
                             </navigationBar>
                             <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2GS-ya-XTZ">
-                                <rect key="frame" x="0.0" y="44" width="768" height="932"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="911"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
@@ -243,7 +262,9 @@ The Journal of ITS is a bimonthly circulation available to BICSI Members at no a
                             <constraint firstItem="ej5-n5-O85" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" id="dYc-7R-70W"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Info" image="second" id="cPa-gy-q4n"/>
+                    <navigationItem key="navigationItem" title="Info" id="udg-5A-5pK"/>
                     <connections>
                         <outlet property="activity" destination="1VE-I6-IhJ" id="m3x-Np-cCc"/>
                         <outlet property="webView" destination="2GS-ya-XTZ" id="nm5-G4-aSX"/>
@@ -251,7 +272,7 @@ The Journal of ITS is a bimonthly circulation available to BICSI Members at no a
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2882" y="464"/>
+            <point key="canvasLocation" x="3862" y="628"/>
         </scene>
         <!--Pop View Controller - BICSI Log In-->
         <scene sceneID="hvj-Ry-iIv">
@@ -293,7 +314,8 @@ The Journal of ITS is a bimonthly circulation available to BICSI Members at no a
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.29803921570000003" green="0.63137254899999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.29803921568627451" green="0.63137254901960782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="BICSI Log In" id="ftT-DO-c3h"/>
@@ -319,7 +341,7 @@ The Journal of ITS is a bimonthly circulation available to BICSI Members at no a
                     </tabBar>
                     <connections>
                         <segue destination="oZv-gt-RDC" kind="relationship" relationship="viewControllers" id="pVp-5u-Bdg"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="Amz-8v-JCf" kind="relationship" relationship="viewControllers" id="j3l-KY-Zpo"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -330,7 +352,6 @@ The Journal of ITS is a bimonthly circulation available to BICSI Members at no a
     <resources>
         <image name="JITSSampleCoverApp.png" width="150" height="195"/>
         <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -283,7 +283,7 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    cell.backgroundColor = [UIColor colorWithRed:52 green:152 blue:219 alpha:0];
+    cell.backgroundColor = [UIColor colorWithRed:76 green:161 blue:255 alpha:0];
 }
 
 //- (UIImage *)cellBackgroundForRowAtIndexPath:(NSIndexPath *)indexPath
