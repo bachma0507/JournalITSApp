@@ -56,6 +56,7 @@
     self.cancelButton.enabled = NO;
     
     
+    
     [progressView setHidden:YES];
     
     [self.navigationItem setHidesBackButton:YES];
@@ -322,6 +323,7 @@
         
         
         self.cancelButton.enabled = YES;
+        self.cancelButton.tintColor = [UIColor redColor];
         [progressView setHidden:NO];
         self.startDate = [NSDate date];
         //cell.TapLabel.hidden = YES;
