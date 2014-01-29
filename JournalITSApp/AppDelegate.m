@@ -53,13 +53,17 @@
     UIImage* tabBarBackground = [UIImage imageNamed:@"tabbarflatblue.png"];
     [[UITabBar appearance] setBackgroundImage:tabBarBackground];
     
-    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                       [UIColor whiteColor], UITextAttributeTextColor,
-                                                       nil] forState:UIControlStateNormal];
+//    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+//                                                       [UIColor whiteColor], UITextAttributeTextColor,
+//                                                       nil] forState:UIControlStateNormal];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{                                                     NSForegroundColorAttributeName : [UIColor whiteColor]} forState:UIControlStateSelected];
+    
     UIColor *titleHighlightedColor = [UIColor /*whiteColor*/colorWithRed:247/255.0 green:185/255.0 blue:15/255.0 alpha:1.0];
-    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                       titleHighlightedColor, UITextAttributeTextColor,
-                                                       nil] forState:UIControlStateHighlighted];
+//    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+//                                                       titleHighlightedColor, UITextAttributeTextColor,
+//                                                       nil] forState:UIControlStateHighlighted];
+    
+    [[UITabBarItem appearance] setTitleTextAttributes:@{                                                     NSForegroundColorAttributeName : titleHighlightedColor} forState:UIControlStateSelected];
     
     // Assign tab bar item with titles
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
