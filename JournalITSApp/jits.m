@@ -10,9 +10,9 @@
 
 @implementation jits
 
-@synthesize jitsid, url, coverimage, issue;
+@synthesize jitsid, url, coverimage, issue, topic;
 
--(id) initWithjitsID: (NSString *) jID andCoverImage: (NSString *) jCoverImage andURL: (NSString *) jURL andIssue: (NSString *) jIssue
+-(id) initWithjitsID: (NSString *) jID andCoverImage: (NSString *) jCoverImage andURL: (NSString *) jURL andIssue: (NSString *) jIssue andTopic: (NSString *) jTopic
 {
     self = [super init];
     if (self) {
@@ -21,7 +21,7 @@
         coverimage = jCoverImage;
         url = jURL;
         issue = jIssue;
-        
+        topic = jTopic;
         
     }
     return self;

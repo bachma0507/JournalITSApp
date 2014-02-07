@@ -14,9 +14,9 @@
 @property (nonatomic, strong) NSString * url;
 @property (nonatomic, strong) NSString * issue;
 @property (nonatomic, strong) NSString * jitsid;
-
+@property (nonatomic, strong) NSString * topic;
 
 //methods
--(id) initWithjitsID: (NSString *) jID andCoverImage: (NSString *) jCoverImage andURL: (NSString *) jURL andIssue: (NSString *) jIssue;
+-(id) initWithjitsID: (NSString *) jID andCoverImage: (NSString *) jCoverImage andURL: (NSString *) jURL andIssue: (NSString *) jIssue andTopic: (NSString *) jTopic;
 
 @end

@@ -11,6 +11,7 @@
 @interface jitsTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) IBOutlet UILabel *issue;
+@property (nonatomic, strong) IBOutlet UILabel *topic;
 @property (nonatomic, strong) IBOutlet UIImageView *coverimage;
 @property (strong, nonatomic) IBOutlet UILabel *TapLabel;
 

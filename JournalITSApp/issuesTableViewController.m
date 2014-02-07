@@ -86,9 +86,10 @@
         NSString * jCoverImage = [[json objectAtIndex:i] objectForKey:@"COVERIMAGE"];
         NSString * jURL = [[json objectAtIndex:i] objectForKey:@"URL"];
         NSString * jIssue = [[json objectAtIndex:i] objectForKey:@"ISSUE"];
+        NSString * jTopic = [[json objectAtIndex:i] objectForKey:@"TOPIC"];
         
         
-        jits * myJits = [[jits alloc] initWithjitsID: jID andCoverImage:jCoverImage andURL:jURL andIssue:jIssue];
+        jits * myJits = [[jits alloc] initWithjitsID: jID andCoverImage:jCoverImage andURL:jURL andIssue:jIssue andTopic:jTopic];
         
         
         //Add object to Array
@@ -222,6 +223,8 @@
     jitsInstance = [jitsArray objectAtIndex:indexPath.row];
     
     cell.issue.text = jitsInstance.issue;
+    
+    cell.topic.text = jitsInstance.topic;
     
     NSLog(@"jitsid = %@", jitsInstance.jitsid);
     
