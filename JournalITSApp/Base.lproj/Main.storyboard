@@ -330,6 +330,13 @@ The Journal of ITS is a bimonthly circulation available to BICSI Members at no a
                                     <action selector="loginClicked:" destination="zgh-mf-kAF" eventType="touchUpInside" id="bRR-j4-gdP"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(If you forgot your username and/or password, please contact BICSI Customer Service at 800.242.7405)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJ1-Ep-xFw">
+                                <rect key="frame" x="55" y="263" width="659" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.29803921570000003" green="0.63137254899999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.29803921568627451" green="0.63137254901960782" blue="1" alpha="1" colorSpace="calibratedRGB"/>

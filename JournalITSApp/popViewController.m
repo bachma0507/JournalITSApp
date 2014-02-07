@@ -87,7 +87,7 @@
         
         if([[self.txtUsername text] isEqualToString:@""] || [[self.txtPassword text] isEqualToString:@""] ) {
             
-            [self alertStatus:@"Please enter Email and Password" :@"Sign in Failed!" :0];
+            [self alertStatus:@"Please enter Username and Password" :@"Sign in Failed!" :0];
             
         } else {
             
