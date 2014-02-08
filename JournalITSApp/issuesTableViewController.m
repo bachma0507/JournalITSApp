@@ -290,6 +290,11 @@
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     cell.backgroundColor = [UIColor colorWithRed:76 green:161 blue:255 alpha:0];
+    
+    if (indexPath.row%2 == 0) {
+        UIColor *altCellColor = [UIColor colorWithRed:121/255.0 green:184/255.0 blue:255/255.0 alpha:1.0];
+        cell.backgroundColor = altCellColor;
+    }
 }
 
 //- (UIImage *)cellBackgroundForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -298,6 +303,8 @@
 //    UIImage *background = [UIImage imageNamed:@"bkgnd2.png"];
 //        return background;
 //}
+
+
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
