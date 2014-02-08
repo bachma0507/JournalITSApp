@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C95826A18A6D70900A6C4FE /* PDFTouch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C95826918A6D70900A6C4FE /* PDFTouch.framework */; };
+		4C95826C18A6D76400A6C4FE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C95826B18A6D76400A6C4FE /* MapKit.framework */; };
+		4C95826E18A6D77200A6C4FE /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C95826D18A6D77200A6C4FE /* MediaPlayer.framework */; };
+		4C95827018A6D78000A6C4FE /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C95826F18A6D78000A6C4FE /* CoreText.framework */; };
+		4C95827218A6D7D000A6C4FE /* PDFTouch.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4C95827118A6D7D000A6C4FE /* PDFTouch.bundle */; };
 		4C999FCA1896D8C600DA102A /* home_tab_icon_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C999FC61896D8C600DA102A /* home_tab_icon_selected.png */; };
 		4C999FCB1896D8C600DA102A /* home_tab_icon_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C999FC71896D8C600DA102A /* home_tab_icon_selected@2x.png */; };
 		4C999FCC1896D8C600DA102A /* home_tab_icon_unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C999FC81896D8C600DA102A /* home_tab_icon_unselected.png */; };
@@ -99,6 +104,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C95826918A6D70900A6C4FE /* PDFTouch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PDFTouch.framework; sourceTree = "<group>"; };
+		4C95826B18A6D76400A6C4FE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		4C95826D18A6D77200A6C4FE /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		4C95826F18A6D78000A6C4FE /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		4C95827118A6D7D000A6C4FE /* PDFTouch.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PDFTouch.bundle; sourceTree = "<group>"; };
 		4C999FC61896D8C600DA102A /* home_tab_icon_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_tab_icon_selected.png; sourceTree = "<group>"; };
 		4C999FC71896D8C600DA102A /* home_tab_icon_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_tab_icon_selected@2x.png"; sourceTree = "<group>"; };
 		4C999FC81896D8C600DA102A /* home_tab_icon_unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_tab_icon_unselected.png; sourceTree = "<group>"; };
@@ -220,6 +230,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C95827018A6D78000A6C4FE /* CoreText.framework in Frameworks */,
+				4C95826E18A6D77200A6C4FE /* MediaPlayer.framework in Frameworks */,
+				4C95826C18A6D76400A6C4FE /* MapKit.framework in Frameworks */,
 				4CF6FB951891A26500E2A539 /* CoreLocation.framework in Frameworks */,
 				4CF6FB881890A82E00E2A539 /* Security.framework in Frameworks */,
 				4CF6FB04188BB40600E2A539 /* ImageIO.framework in Frameworks */,
@@ -229,6 +242,7 @@
 				4CF6F96618846BBB00E2A539 /* UIKit.framework in Frameworks */,
 				4CF6FB911891A21300E2A539 /* PushIOManager.framework in Frameworks */,
 				4CF6F96218846BBB00E2A539 /* Foundation.framework in Frameworks */,
+				4C95826A18A6D70900A6C4FE /* PDFTouch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +281,10 @@
 		4CF6F96018846BBB00E2A539 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4C95826F18A6D78000A6C4FE /* CoreText.framework */,
+				4C95826D18A6D77200A6C4FE /* MediaPlayer.framework */,
+				4C95826B18A6D76400A6C4FE /* MapKit.framework */,
+				4C95826918A6D70900A6C4FE /* PDFTouch.framework */,
 				4CF6FB941891A26500E2A539 /* CoreLocation.framework */,
 				4CF6FB901891A21300E2A539 /* PushIOManager.framework */,
 				4CF6FB871890A82D00E2A539 /* Security.framework */,
@@ -316,6 +334,7 @@
 		4CF6F96818846BBB00E2A539 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4C95827118A6D7D000A6C4FE /* PDFTouch.bundle */,
 				4CF6F96918846BBB00E2A539 /* JournalITSApp-Info.plist */,
 				4CF6F96A18846BBB00E2A539 /* InfoPlist.strings */,
 				4CF6F96D18846BBB00E2A539 /* main.m */,
@@ -553,6 +572,7 @@
 				4CF6FB4B188BB4E600E2A539 /* Reader-Mark-N.png in Resources */,
 				4CF6FB48188BB4E500E2A539 /* Reader-Button-N@2x.png in Resources */,
 				4CF6FAF6188BACA400E2A539 /* JITSSampleCoverApp.png in Resources */,
+				4C95827218A6D7D000A6C4FE /* PDFTouch.bundle in Resources */,
 				4CF6FB72188CA27400E2A539 /* cellbkgnd.jpg in Resources */,
 				4C999FD41896DB5800DA102A /* news_tab_icon_selected.png in Resources */,
 				4CF6FB4E188BB4E600E2A539 /* Reader-Mark-Y@2x.png in Resources */,

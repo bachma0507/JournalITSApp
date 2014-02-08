@@ -13,8 +13,17 @@
 #import "ReaderViewController.h"
 #import "jitsTableViewCell.h"
 #import "Reachability.h"
+#import <PDFTouch/PDFTouch.h>
 
-@interface FirstViewController ()<UITableViewDelegate, UITableViewDataSource, DownloadManagerDelegate, ReaderViewControllerDelegate>
+@interface FirstViewController ()<UITableViewDelegate, UITableViewDataSource, DownloadManagerDelegate, ReaderViewControllerDelegate, YLPDFViewControllerDelegate>
+
+{
+    YLDocument *_document;
+}
+
+@property (nonatomic, readonly) YLDocument *document;
+
+
 
 //@property (strong, nonatomic) DownloadManager *downloadManager;
 //@property (strong, nonatomic) NSDate *startDate;
@@ -26,6 +35,7 @@
 @implementation FirstViewController
 
 @synthesize json, jitsArray, loginButton, imageView, jitsTextView, sortedArray;
+@synthesize document = _document;
 
 #pragma mark Constants
 
@@ -77,71 +87,73 @@
 //    self.downloadManager.maxConcurrentDownloads = 4;
 }
 
+#pragma mark -
+#pragma mark YLPDFViewControllerDelegate Methods
+- (void)pdfViewController:(YLPDFViewController *)controller didDisplayDocument:(YLDocument *)document {
+    NSLog(@"Did display document.");
+}
+
+- (void)pdfViewController:(YLPDFViewController *)controller willDismissDocument:(YLDocument *)document {
+    NSLog(@"Will dismiss document.");
+}
+
 - (IBAction)readSampleIssue:(id)sender {
     
-	NSString *phrase = nil; // Document password (for unlocking most encrypted PDF files)
+    //NSString *phrase = nil; // Document password (for unlocking most encrypted PDF files)
     
-	NSArray *pdfs = [[NSBundle mainBundle] pathsForResourcesOfType:@"pdf" inDirectory:nil];
+    	NSArray *pdfs = [[NSBundle mainBundle] pathsForResourcesOfType:@"pdf" inDirectory:nil];
     
-	NSString *filePath = [pdfs lastObject]; assert(filePath != nil); // Path to last PDF file
+    	NSString *filePath = [pdfs lastObject]; assert(filePath != nil); // Path to last PDF file
     
-	ReaderDocument *document = [ReaderDocument withDocumentFilePath:filePath password:phrase];
+        _document = [[YLDocument alloc] initWithFilePath:filePath];
     
-    if (document != nil) // Must have a valid ReaderDocument object in order to proceed with things
-    {
-        ReaderViewController *readerViewController = [[ReaderViewController alloc] initWithReaderDocument:document];
-        
-        readerViewController.delegate = self; // Set the ReaderViewController delegate to self
-        
-        
-#if (DEMO_VIEW_CONTROLLER_PUSH == TRUE)
-        
-        [self.navigationController pushViewController:readerViewController animated:YES];
-        
-#else // present in a modal view controller
-        
-        readerViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-        readerViewController.modalPresentationStyle = UIModalPresentationFullScreen;
-        
-        [self presentViewController:readerViewController animated:YES completion:NULL];
-        
-#endif // DEMO_VIEW_CONTROLLER_PUSH
+    if(_document.isLocked) {
+        // unlock pdf document
+        [_document unlockWithPassword:@""];
     }
+
+    YLPDFViewController *v = [[YLPDFViewController alloc] initWithDocument:self.document];
+    [v setDelegate:self];
+    [v setDocumentMode:YLDocumentModeSingle];
+    [v setPageCurlEnabled:YES];
+    [v setDocumentLead:YLDocumentLeadRight];
+    [v setModalPresentationStyle:UIModalPresentationFullScreen];
+    [v setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+    [self.navigationController presentViewController:v animated:YES completion:nil];
     
+    ////READER Class Start
+//	NSString *phrase = nil; // Document password (for unlocking most encrypted PDF files)
+//    
+//	NSArray *pdfs = [[NSBundle mainBundle] pathsForResourcesOfType:@"pdf" inDirectory:nil];
+//    
+//	NSString *filePath = [pdfs lastObject]; assert(filePath != nil); // Path to last PDF file
+//    
+//	ReaderDocument *document = [ReaderDocument withDocumentFilePath:filePath password:phrase];
+//    
+//    if (document != nil) // Must have a valid ReaderDocument object in order to proceed with things
+//    {
+//        ReaderViewController *readerViewController = [[ReaderViewController alloc] initWithReaderDocument:document];
+//        
+//        readerViewController.delegate = self; // Set the ReaderViewController delegate to self
+//        
+//        
+//#if (DEMO_VIEW_CONTROLLER_PUSH == TRUE)
+//        
+//        [self.navigationController pushViewController:readerViewController animated:YES];
+//        
+//#else // present in a modal view controller
+//        
+//        readerViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+//        readerViewController.modalPresentationStyle = UIModalPresentationFullScreen;
+//        
+//        [self presentViewController:readerViewController animated:YES completion:NULL];
+//        
+//#endif // DEMO_VIEW_CONTROLLER_PUSH
+//    }
+   ////READER Class End
     
 }
 
-//-(void)rowSelected:(NSString*)str
-//{
-//    // self.monster = curSelection;
-//    
-//    if (self.listPopover != nil) {
-//        [self.listPopover dismissPopoverAnimated:YES];
-//    }
-//    
-//    // [self refresh];
-//}
-//
-//
-//- (IBAction)loginClicked:(id)sender {
-//    
-//    popupView = [[popViewController alloc]init];
-//    self.listPopover = [[UIPopoverController alloc]initWithContentViewController:popupView];
-//    [self.listPopover presentPopoverFromRect:CGRectMake(0, 0, 300, 300) inView:loginButton permittedArrowDirections:UIPopoverArrowDirectionDown animated:YES];
-//    
-//}
-
-//- (void) alertStatus:(NSString *)msg :(NSString *)title :(int) tag
-//{
-//    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
-//                                                        message:msg
-//                                                       delegate:self
-//                                              cancelButtonTitle:@"Ok"
-//                                              otherButtonTitles:nil, nil];
-//    alertView.tag = tag;
-//    [alertView show];
-//    
-//}
 
 #pragma mark ReaderViewControllerDelegate methods
 
