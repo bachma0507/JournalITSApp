@@ -115,7 +115,7 @@
     YLPDFViewController *v = [[YLPDFViewController alloc] initWithDocument:self.document];
     [v setDelegate:self];
     [v setDocumentMode:YLDocumentModeSingle];
-    [v setPageCurlEnabled:YES];
+    [v setPageCurlEnabled:NO];
     [v setDocumentLead:YLDocumentLeadRight];
     [v setModalPresentationStyle:UIModalPresentationFullScreen];
     [v setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
