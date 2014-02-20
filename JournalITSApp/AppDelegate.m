@@ -179,6 +179,17 @@
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
     [[PushIOManager sharedInstance] didReceiveRemoteNotification:userInfo];
+    
+    NSDictionary *payload = [userInfo objectForKey:@"aps"];
+    
+    NSString *alertMessage = [payload objectForKey:@"alert"];
+    
+    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:alertMessage delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    
+    [alertView show];
+
+    
 }
 
 - (void)readyForRegistration
