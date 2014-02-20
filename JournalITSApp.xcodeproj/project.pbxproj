@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C894E3D18B13CF700001623 /* backbutton-default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C894E3B18B13CF700001623 /* backbutton-default.png */; };
+		4C894E3E18B13CF700001623 /* backbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C894E3C18B13CF700001623 /* backbutton.png */; };
 		4C999FCA1896D8C600DA102A /* home_tab_icon_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C999FC61896D8C600DA102A /* home_tab_icon_selected.png */; };
 		4C999FCB1896D8C600DA102A /* home_tab_icon_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C999FC71896D8C600DA102A /* home_tab_icon_selected@2x.png */; };
 		4C999FCC1896D8C600DA102A /* home_tab_icon_unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C999FC81896D8C600DA102A /* home_tab_icon_unselected.png */; };
@@ -16,7 +18,7 @@
 		4C999FD51896DB5800DA102A /* news_tab_icon_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C999FD11896DB5800DA102A /* news_tab_icon_selected@2x.png */; };
 		4C999FD61896DB5800DA102A /* news_tab_icon_unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C999FD21896DB5800DA102A /* news_tab_icon_unselected.png */; };
 		4C999FD71896DB5800DA102A /* news_tab_icon_unselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C999FD31896DB5800DA102A /* news_tab_icon_unselected@2x.png */; };
-		4CC290D01891A78900F712F1 /* pushio_config_debug.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CC290CF1891A78900F712F1 /* pushio_config_debug.json */; };
+		4CC290D01891A78900F712F1 /* pushio_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CC290CF1891A78900F712F1 /* pushio_config.json */; };
 		4CF6F96218846BBB00E2A539 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF6F96118846BBB00E2A539 /* Foundation.framework */; };
 		4CF6F96418846BBB00E2A539 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF6F96318846BBB00E2A539 /* CoreGraphics.framework */; };
 		4CF6F96618846BBB00E2A539 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF6F96518846BBB00E2A539 /* UIKit.framework */; };
@@ -99,6 +101,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C894E3B18B13CF700001623 /* backbutton-default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backbutton-default.png"; sourceTree = "<group>"; };
+		4C894E3C18B13CF700001623 /* backbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backbutton.png; sourceTree = "<group>"; };
 		4C999FC61896D8C600DA102A /* home_tab_icon_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_tab_icon_selected.png; sourceTree = "<group>"; };
 		4C999FC71896D8C600DA102A /* home_tab_icon_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_tab_icon_selected@2x.png"; sourceTree = "<group>"; };
 		4C999FC81896D8C600DA102A /* home_tab_icon_unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_tab_icon_unselected.png; sourceTree = "<group>"; };
@@ -108,7 +112,7 @@
 		4C999FD11896DB5800DA102A /* news_tab_icon_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news_tab_icon_selected@2x.png"; sourceTree = "<group>"; };
 		4C999FD21896DB5800DA102A /* news_tab_icon_unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = news_tab_icon_unselected.png; sourceTree = "<group>"; };
 		4C999FD31896DB5800DA102A /* news_tab_icon_unselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news_tab_icon_unselected@2x.png"; sourceTree = "<group>"; };
-		4CC290CF1891A78900F712F1 /* pushio_config_debug.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pushio_config_debug.json; sourceTree = "<group>"; };
+		4CC290CF1891A78900F712F1 /* pushio_config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pushio_config.json; sourceTree = "<group>"; };
 		4CF6F95E18846BBB00E2A539 /* JournalITSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JournalITSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF6F96118846BBB00E2A539 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4CF6F96318846BBB00E2A539 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -284,7 +288,7 @@
 		4CF6F96718846BBB00E2A539 /* JournalITSApp */ = {
 			isa = PBXGroup;
 			children = (
-				4CC290CF1891A78900F712F1 /* pushio_config_debug.json */,
+				4CC290CF1891A78900F712F1 /* pushio_config.json */,
 				4CF6FB841890252600E2A539 /* StoryBoard */,
 				4CF6FB73188CC96500E2A539 /* Classes */,
 				4CF6FB70188CA26700E2A539 /* images */,
@@ -427,6 +431,8 @@
 		4CF6FB70188CA26700E2A539 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				4C894E3B18B13CF700001623 /* backbutton-default.png */,
+				4C894E3C18B13CF700001623 /* backbutton.png */,
 				4C999FD01896DB5800DA102A /* news_tab_icon_selected.png */,
 				4C999FD11896DB5800DA102A /* news_tab_icon_selected@2x.png */,
 				4C999FD21896DB5800DA102A /* news_tab_icon_unselected.png */,
@@ -545,13 +551,15 @@
 				4C999FD71896DB5800DA102A /* news_tab_icon_unselected@2x.png in Resources */,
 				4CF6FB4C188BB4E600E2A539 /* Reader-Mark-N@2x.png in Resources */,
 				4CF6FAF8188BACEE00E2A539 /* Sample Issue.pdf in Resources */,
-				4CC290D01891A78900F712F1 /* pushio_config_debug.json in Resources */,
+				4CC290D01891A78900F712F1 /* pushio_config.json in Resources */,
+				4C894E3E18B13CF700001623 /* backbutton.png in Resources */,
 				4CF6F97D18846BBB00E2A539 /* Images.xcassets in Resources */,
 				4CF6FB52188BB4E600E2A539 /* Reader-Thumbs@2x.png in Resources */,
 				4CF6FB8618909DC300E2A539 /* bkgnd2.png in Resources */,
 				4CF6FB66188BB4F200E2A539 /* Localizable.strings in Resources */,
 				4CF6FB4B188BB4E600E2A539 /* Reader-Mark-N.png in Resources */,
 				4CF6FB48188BB4E500E2A539 /* Reader-Button-N@2x.png in Resources */,
+				4C894E3D18B13CF700001623 /* backbutton-default.png in Resources */,
 				4CF6FAF6188BACA400E2A539 /* JITSSampleCoverApp.png in Resources */,
 				4CF6FB72188CA27400E2A539 /* cellbkgnd.jpg in Resources */,
 				4C999FD41896DB5800DA102A /* news_tab_icon_selected.png in Resources */,

@@ -20,7 +20,7 @@
             </objects>
             <point key="canvasLocation" x="2736" y="-825"/>
         </scene>
-        <!--First View Controller - The Journal of Information Technology Systems-->
+        <!--First View Controller - The Journal of Information and Communications Technology-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" sceneMemberID="viewController">
@@ -111,11 +111,11 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2M4-ur-eFs">
-                                <rect key="frame" x="494" y="14" width="254" height="286"/>
+                                <rect key="frame" x="494" y="14" width="254" height="236"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <string key="text">Exclusively technical in nature, The Journal of ITS continues BICSI's mission of providing relevant, vendor-neutral and authoritative information to ITS professionals. 
-The Journal of ITS is a bimonthly circulation available to BICSI Members at no additional cost as a benefit of their membership. If you're not a BICSI Member, you can still enjoy The Journal of ITS by becoming a BICSI Customer. See the Info tab below for more details.</string>
+                                <string key="text">Exclusively technical in nature, The Journal of ICT continues BICSI's mission of providing relevant, vendor-neutral and authoritative information to ICT professionals. 
+The Journal of ICT is a bimonthly circulation available to BICSI Members at no additional cost as a benefit of their membership. See the Info tab below for more details.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -139,7 +139,7 @@ The Journal of ITS is a bimonthly circulation available to BICSI Members at no a
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="Home" image="first" id="acW-dT-cKf"/>
-                    <navigationItem key="navigationItem" title="The Journal of Information Technology Systems" id="rod-AK-eRu"/>
+                    <navigationItem key="navigationItem" title="The Journal of Information and Communications Technology" id="rod-AK-eRu"/>
                     <connections>
                         <outlet property="imageView" destination="q2R-2o-zdD" id="eUl-tb-v1s"/>
                         <outlet property="jitsTextView" destination="2M4-ur-eFs" id="sDJ-ie-2yF"/>
@@ -151,7 +151,7 @@ The Journal of ITS is a bimonthly circulation available to BICSI Members at no a
             </objects>
             <point key="canvasLocation" x="3702" y="-879"/>
         </scene>
-        <!--Issues Table View Controller - The Journal of ITS: Issues-->
+        <!--Issues Table View Controller - The Journal of ICT: Editions-->
         <scene sceneID="LMa-4D-Wdm">
             <objects>
                 <tableViewController id="bG0-Gz-LX7" customClass="issuesTableViewController" sceneMemberID="viewController">
@@ -212,7 +212,7 @@ The Journal of ITS is a bimonthly circulation available to BICSI Members at no a
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" title="The Journal of ITS: Issues" id="Sew-X5-4vL">
+                    <navigationItem key="navigationItem" title="The Journal of ICT: Editions" id="Sew-X5-4vL">
                         <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="fTL-gM-JMh">
                             <connections>
                                 <action selector="tappedCancelButton:" destination="bG0-Gz-LX7" id="OYM-DW-TFA"/>
@@ -243,7 +243,7 @@ The Journal of ITS is a bimonthly circulation available to BICSI Members at no a
             </objects>
             <point key="canvasLocation" x="2752" y="469"/>
         </scene>
-        <!--Second View Controller - Info-->
+        <!--Second View Controller - Information-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="SecondViewController" sceneMemberID="viewController">
@@ -281,9 +281,25 @@ The Journal of ITS is a bimonthly circulation available to BICSI Members at no a
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Info" image="second" id="cPa-gy-q4n"/>
-                    <navigationItem key="navigationItem" title="Info" id="udg-5A-5pK"/>
+                    <navigationItem key="navigationItem" title="Information" id="udg-5A-5pK">
+                        <barButtonItem key="leftBarButtonItem" id="CK1-aT-Ews">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FxX-ne-5fq">
+                                <rect key="frame" x="16" y="7" width="96" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="backbutton-default.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted" image="backbutton.png"/>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="Jr8-KP-Qpb"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="activity" destination="1VE-I6-IhJ" id="m3x-Np-cCc"/>
+                        <outlet property="back" destination="FxX-ne-5fq" id="bA9-xP-zSl"/>
                         <outlet property="webView" destination="2GS-ya-XTZ" id="nm5-G4-aSX"/>
                     </connections>
                 </viewController>
@@ -375,6 +391,8 @@ The Journal of ITS is a bimonthly circulation available to BICSI Members at no a
     </scenes>
     <resources>
         <image name="JITSSampleCoverApp.png" width="150" height="195"/>
+        <image name="backbutton-default.png" width="50" height="30"/>
+        <image name="backbutton.png" width="50" height="30"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>

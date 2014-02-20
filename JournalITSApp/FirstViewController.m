@@ -198,6 +198,8 @@
         //Add object to Array
         [jitsArray addObject:myJits];
         
+        
+        
         //NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"jitsid" ascending:NO];
         //sortedArray = [self.jitsArray sortedArrayUsingDescriptors:[NSArray arrayWithObjects:descriptor,nil]];
         

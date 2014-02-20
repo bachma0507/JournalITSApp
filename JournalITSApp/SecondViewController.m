@@ -13,12 +13,15 @@
 @end
 
 @implementation SecondViewController
-@synthesize webView, activity;
+@synthesize webView, activity, back;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationItem.backBarButtonItem = backButtonItem;
     
     webView.delegate = self;
     
@@ -32,6 +35,7 @@
 
 -(void)webViewDidStartLoad:(UIWebView *)WebView
 {
+    back.enabled = NO;
     [activity startAnimating];
     
     
@@ -42,12 +46,17 @@
     [activity stopAnimating];
     activity.hidden = TRUE;
     
+    if (webView.canGoBack == YES) {
+        back.enabled = YES;
+        back.highlighted = YES;
+    }
+    
 }
 
 -(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType;
 {
     NSURL *requestURL =[ request URL ];
-    if ( ( [ [ requestURL scheme ] isEqualToString: @"http" ] || [ [ requestURL scheme ] isEqualToString: @"https" ] || [ [ requestURL scheme ] isEqualToString: @"mailto" ])
+    if ( ( [ [ requestURL scheme ] isEqualToString: @"https://www.bicsi.org/forms/Membership/Application.aspx" ] || [ [ requestURL scheme ] isEqualToString: @"https" ] || [ [ requestURL scheme ] isEqualToString: @"mailto" ])
         && ( navigationType == UIWebViewNavigationTypeLinkClicked ) ) {
         return ![ [ UIApplication sharedApplication ] openURL: requestURL];
         //SVWebViewController *webViewController = [[SVWebViewController alloc] initWithURL:requestURL];
@@ -62,6 +71,10 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)backButtonPressed:(id)sender {
+    [webView goBack];
 }
 
 @end
