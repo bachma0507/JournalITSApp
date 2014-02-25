@@ -26,6 +26,8 @@
 {
     // Override point for customization after application launch.
     
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+    
     [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(reachabilityChanged:) name: kReachabilityChangedNotification object: nil];
     
     [[PushIOManager sharedInstance] setDelegate:self];
