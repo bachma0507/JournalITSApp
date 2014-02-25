@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C30FF3F18BCE23F000D785C /* beep-beep.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4C30FF3E18BCE23F000D785C /* beep-beep.aiff */; };
 		4C894E3D18B13CF700001623 /* backbutton-default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C894E3B18B13CF700001623 /* backbutton-default.png */; };
 		4C894E3E18B13CF700001623 /* backbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C894E3C18B13CF700001623 /* backbutton.png */; };
 		4C999FCA1896D8C600DA102A /* home_tab_icon_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C999FC61896D8C600DA102A /* home_tab_icon_selected.png */; };
@@ -101,6 +102,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C30FF3E18BCE23F000D785C /* beep-beep.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "beep-beep.aiff"; sourceTree = "<group>"; };
 		4C894E3B18B13CF700001623 /* backbutton-default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backbutton-default.png"; sourceTree = "<group>"; };
 		4C894E3C18B13CF700001623 /* backbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backbutton.png; sourceTree = "<group>"; };
 		4C999FC61896D8C600DA102A /* home_tab_icon_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_tab_icon_selected.png; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 		4CF6FAF4188BAC8600E2A539 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4C30FF3E18BCE23F000D785C /* beep-beep.aiff */,
 				4CF6FAF7188BACEE00E2A539 /* Sample Issue.pdf */,
 				4CF6FAF5188BACA400E2A539 /* JITSSampleCoverApp.png */,
 			);
@@ -548,6 +551,7 @@
 			files = (
 				4CF6FB4F188BB4E600E2A539 /* Reader-Print.png in Resources */,
 				4C999FCB1896D8C600DA102A /* home_tab_icon_selected@2x.png in Resources */,
+				4C30FF3F18BCE23F000D785C /* beep-beep.aiff in Resources */,
 				4C999FD71896DB5800DA102A /* news_tab_icon_unselected@2x.png in Resources */,
 				4CF6FB4C188BB4E600E2A539 /* Reader-Mark-N@2x.png in Resources */,
 				4CF6FAF8188BACEE00E2A539 /* Sample Issue.pdf in Resources */,
