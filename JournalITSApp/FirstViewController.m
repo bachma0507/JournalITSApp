@@ -85,6 +85,9 @@
     
 	NSString *filePath = [pdfs lastObject]; assert(filePath != nil); // Path to last PDF file
     
+    NSURL *url = [NSURL fileURLWithPath:filePath];
+    [url setResourceValue:[NSNumber numberWithBool:YES] forKey:NSURLIsExcludedFromBackupKey error:nil];
+    
 	ReaderDocument *document = [ReaderDocument withDocumentFilePath:filePath password:phrase];
     
     if (document != nil) // Must have a valid ReaderDocument object in order to proceed with things

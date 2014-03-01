@@ -259,6 +259,9 @@
     NSString* documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSString *downloadFolder = [documentsPath stringByAppendingPathComponent:@"downloads"];
     
+    NSURL *url = [NSURL fileURLWithPath:downloadFolder];
+    [url setResourceValue:[NSNumber numberWithBool:YES] forKey:NSURLIsExcludedFromBackupKey error:nil];
+    
     NSString * fileName = [[NSString alloc]initWithFormat:@"%@", [myURL lastPathComponent]];
     
     NSString* foofile = [downloadFolder stringByAppendingPathComponent:fileName];
