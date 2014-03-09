@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C12841018CCFCD900060A56 /* PushIOManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C12840F18CCFCD900060A56 /* PushIOManager.framework */; };
 		4C30FF3F18BCE23F000D785C /* beep-beep.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4C30FF3E18BCE23F000D785C /* beep-beep.aiff */; };
 		4C894E3D18B13CF700001623 /* backbutton-default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C894E3B18B13CF700001623 /* backbutton-default.png */; };
 		4C894E3E18B13CF700001623 /* backbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C894E3C18B13CF700001623 /* backbutton.png */; };
@@ -87,7 +88,6 @@
 		4CF6FB7C188D79BD00E2A539 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6FB7B188D79BD00E2A539 /* KeychainItemWrapper.m */; };
 		4CF6FB8618909DC300E2A539 /* bkgnd2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CF6FB8518909DC300E2A539 /* bkgnd2.png */; };
 		4CF6FB881890A82E00E2A539 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF6FB871890A82D00E2A539 /* Security.framework */; };
-		4CF6FB911891A21300E2A539 /* PushIOManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF6FB901891A21300E2A539 /* PushIOManager.framework */; };
 		4CF6FB951891A26500E2A539 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF6FB941891A26500E2A539 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +102,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C12840F18CCFCD900060A56 /* PushIOManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PushIOManager.framework; sourceTree = "<group>"; };
 		4C30FF3E18BCE23F000D785C /* beep-beep.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "beep-beep.aiff"; sourceTree = "<group>"; };
 		4C894E3B18B13CF700001623 /* backbutton-default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backbutton-default.png"; sourceTree = "<group>"; };
 		4C894E3C18B13CF700001623 /* backbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backbutton.png; sourceTree = "<group>"; };
@@ -217,7 +218,6 @@
 		4CF6FB7B188D79BD00E2A539 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		4CF6FB8518909DC300E2A539 /* bkgnd2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bkgnd2.png; sourceTree = "<group>"; };
 		4CF6FB871890A82D00E2A539 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		4CF6FB901891A21300E2A539 /* PushIOManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PushIOManager.framework; sourceTree = "<group>"; };
 		4CF6FB941891A26500E2A539 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -229,11 +229,11 @@
 				4CF6FB951891A26500E2A539 /* CoreLocation.framework in Frameworks */,
 				4CF6FB881890A82E00E2A539 /* Security.framework in Frameworks */,
 				4CF6FB04188BB40600E2A539 /* ImageIO.framework in Frameworks */,
+				4C12841018CCFCD900060A56 /* PushIOManager.framework in Frameworks */,
 				4CF6FB02188BB40000E2A539 /* MessageUI.framework in Frameworks */,
 				4CF6FB00188BB3F900E2A539 /* QuartzCore.framework in Frameworks */,
 				4CF6F96418846BBB00E2A539 /* CoreGraphics.framework in Frameworks */,
 				4CF6F96618846BBB00E2A539 /* UIKit.framework in Frameworks */,
-				4CF6FB911891A21300E2A539 /* PushIOManager.framework in Frameworks */,
 				4CF6F96218846BBB00E2A539 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,8 +273,8 @@
 		4CF6F96018846BBB00E2A539 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4C12840F18CCFCD900060A56 /* PushIOManager.framework */,
 				4CF6FB941891A26500E2A539 /* CoreLocation.framework */,
-				4CF6FB901891A21300E2A539 /* PushIOManager.framework */,
 				4CF6FB871890A82D00E2A539 /* Security.framework */,
 				4CF6FB03188BB40600E2A539 /* ImageIO.framework */,
 				4CF6FB01188BB40000E2A539 /* MessageUI.framework */,
