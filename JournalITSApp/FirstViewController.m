@@ -288,6 +288,36 @@
 
 }
 
+- (void)popViewControllerDidFinish:(popViewController *)controller
+{
+    [self.popPopoverController dismissPopoverAnimated:YES];
+}
+
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
+{
+    self.popPopoverController = nil;
+}
+
+- (IBAction)togglePopover:(id)sender
+{
+    if (self.popPopoverController) {
+        [self.popPopoverController dismissPopoverAnimated:YES];
+        self.popPopoverController = nil;
+    } else {
+        [self performSegueWithIdentifier:@"login_detail" sender:sender];
+    }
+}
+
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    if ([[segue identifier] isEqualToString:@"login_detail"]) {
+//        [[segue destinationViewController] setDelegate:self];
+//        UIPopoverController *popoverController = [(UIStoryboardPopoverSegue *)segue popoverController];
+//        self.popPopoverController = popoverController;
+//        popoverController.delegate = self;
+//    }
+//}
+
 //- (UIImage *)cellBackgroundForRowAtIndexPath:(NSIndexPath *)indexPath
 //{
 //    

@@ -7,8 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "issuesTableViewController.h"
 
-@interface popViewController : UIViewController
+@class popViewController;
+
+@protocol popViewControllerDelegate
+- (void)popViewControllerDidFinish:(popViewController *)controller;
+@end
+
+@interface popViewController : UIViewController<issuesTableViewControllerDelegate>
+@property (weak, nonatomic) id <popViewControllerDelegate> delegate;
 @property (strong, nonatomic) IBOutlet UITextField *txtUsername;
 @property (strong, nonatomic) IBOutlet UITextField *txtPassword;
 - (IBAction)loginClicked:(id)sender;

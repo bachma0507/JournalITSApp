@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C12841018CCFCD900060A56 /* PushIOManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C12840F18CCFCD900060A56 /* PushIOManager.framework */; };
+		4C12841A18CE291300060A56 /* PushIOManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C12841918CE291300060A56 /* PushIOManager.framework */; };
 		4C30FF3F18BCE23F000D785C /* beep-beep.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4C30FF3E18BCE23F000D785C /* beep-beep.aiff */; };
 		4C894E3D18B13CF700001623 /* backbutton-default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C894E3B18B13CF700001623 /* backbutton-default.png */; };
 		4C894E3E18B13CF700001623 /* backbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C894E3C18B13CF700001623 /* backbutton.png */; };
@@ -102,7 +102,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4C12840F18CCFCD900060A56 /* PushIOManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PushIOManager.framework; sourceTree = "<group>"; };
+		4C12841918CE291300060A56 /* PushIOManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PushIOManager.framework; sourceTree = "<group>"; };
 		4C30FF3E18BCE23F000D785C /* beep-beep.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "beep-beep.aiff"; sourceTree = "<group>"; };
 		4C894E3B18B13CF700001623 /* backbutton-default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backbutton-default.png"; sourceTree = "<group>"; };
 		4C894E3C18B13CF700001623 /* backbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backbutton.png; sourceTree = "<group>"; };
@@ -229,7 +229,7 @@
 				4CF6FB951891A26500E2A539 /* CoreLocation.framework in Frameworks */,
 				4CF6FB881890A82E00E2A539 /* Security.framework in Frameworks */,
 				4CF6FB04188BB40600E2A539 /* ImageIO.framework in Frameworks */,
-				4C12841018CCFCD900060A56 /* PushIOManager.framework in Frameworks */,
+				4C12841A18CE291300060A56 /* PushIOManager.framework in Frameworks */,
 				4CF6FB02188BB40000E2A539 /* MessageUI.framework in Frameworks */,
 				4CF6FB00188BB3F900E2A539 /* QuartzCore.framework in Frameworks */,
 				4CF6F96418846BBB00E2A539 /* CoreGraphics.framework in Frameworks */,
@@ -273,7 +273,7 @@
 		4CF6F96018846BBB00E2A539 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4C12840F18CCFCD900060A56 /* PushIOManager.framework */,
+				4C12841918CE291300060A56 /* PushIOManager.framework */,
 				4CF6FB941891A26500E2A539 /* CoreLocation.framework */,
 				4CF6FB871890A82D00E2A539 /* Security.framework */,
 				4CF6FB03188BB40600E2A539 /* ImageIO.framework */,
@@ -514,7 +514,7 @@
 		4CF6F95618846BBB00E2A539 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = BICSI;
 				TargetAttributes = {
 					4CF6F95D18846BBB00E2A539 = {
@@ -688,7 +688,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -728,7 +727,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -809,7 +807,6 @@
 		4CF6F99718846BBB00E2A539 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/JournalITSApp.app/JournalITSApp";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -832,7 +829,6 @@
 		4CF6F99818846BBB00E2A539 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/JournalITSApp.app/JournalITSApp";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

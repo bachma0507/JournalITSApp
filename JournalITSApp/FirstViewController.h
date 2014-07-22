@@ -11,7 +11,7 @@
 
 @class Reachability;
 
-@interface FirstViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface FirstViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, popViewControllerDelegate, UIPopoverControllerDelegate>
 
 {
     popViewController *popupView;
@@ -19,6 +19,7 @@
     
 }
 
+@property (strong, nonatomic) UIPopoverController *popPopoverController;
 @property (nonatomic, strong) NSMutableArray * json;
 @property (nonatomic, strong) NSMutableArray * jitsArray;
 @property (nonatomic, strong) NSArray * sortedArray;

@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class issuesTableViewController;
+
+@protocol issuesTableViewControllerDelegate
+
+@end
+
 //@class MBProgressHUD;
 
 @interface issuesTableViewController : UITableViewController
@@ -17,7 +23,7 @@
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
 
-
+@property (weak, nonatomic) id <issuesTableViewControllerDelegate> delegate;
 @property (nonatomic, strong) NSMutableArray * json;
 @property (nonatomic, strong) NSMutableArray * jitsArray;
 @property (nonatomic, strong) NSArray * sortedArray;

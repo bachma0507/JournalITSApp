@@ -9,6 +9,7 @@
 #import "popViewController.h"
 #import "KeychainItemWrapper.h"
 
+
 @interface popViewController ()
 {
     KeychainItemWrapper *keychainItem;
@@ -97,6 +98,7 @@
             
             NSURL *url=[NSURL URLWithString:@"https://speedyreference.com/jitslogin.php"];
             
+            
             NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
             
             NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
@@ -154,7 +156,15 @@
     }
     if (success) {
         
-        [self performSegueWithIdentifier:@"login_success" sender:self];
+        //[self performSegueWithIdentifier:@"login_success" sender:self];
+        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main"   bundle:nil];
+        
+        issuesTableViewController *it = [storyboard instantiateViewControllerWithIdentifier:@"issuesTableID" ];
+        
+        [self presentViewController:it animated:YES completion:NULL];
+        
+        
     }
 
 }
