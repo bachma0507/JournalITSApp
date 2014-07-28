@@ -8,6 +8,8 @@
 
 #import "popViewController.h"
 #import "KeychainItemWrapper.h"
+#import <CommonCrypto/CommonDigest.h>
+#import "NSString+MD5.h"
 
 
 @interface popViewController ()
@@ -18,6 +20,8 @@
 @end
 
 @implementation popViewController
+
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,6 +39,12 @@
     
     //[self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bkgnd2.png"]]];
     
+    NSString *str = @"juliba";
+    
+    // Convert and print the MD5 value to the console
+    NSLog(@" juliba hashed to MD5: %@", [str MD5]);
+    
+    
     keychainItem = [[KeychainItemWrapper alloc] initWithIdentifier:@"BICSIlogin" accessGroup:nil];
     NSString *password = [keychainItem objectForKey:(__bridge id)(kSecValueData)];
     NSLog(@"Keychain password = %@", password);
@@ -48,7 +58,8 @@
     [self.txtUsername setText:[keychainItem objectForKey:(__bridge id)(kSecAttrAccount)]];
     //[self.txtPassword setText:[keychainItem objectForKey:(__bridge id)(kSecValueData)]];
         }
-
+    
+    
 }
 
 //-(void)viewDidAppear:(BOOL)animated
@@ -76,6 +87,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+//+ (NSString *) md5:(NSString *)str {
+//    const char *cStr = [str UTF8String];
+//    unsigned char result[16];
+//    CC_MD5( cStr, strlen(cStr), result );
+//    return [NSString stringWithFormat:
+//            @"%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X",
+//            result[0], result[1], result[2], result[3],
+//            result[4], result[5], result[6], result[7],
+//            result[8], result[9], result[10], result[11],
+//            result[12], result[13], result[14], result[15]
+//            ]; 
+//}
+
+
+
 - (IBAction)loginClicked:(id)sender {
     
     
@@ -93,11 +120,25 @@
         } else {
             
             
-            NSString *post =[[NSString alloc] initWithFormat:@"username=%@&password=%@",[self.txtUsername text],[self.txtPassword text]];
+//            NSString *post =[[NSString alloc] initWithFormat:@"username=%@&password=%@",[self.txtUsername text],[self.txtPassword text]];
+//            NSLog(@"PostData: %@",post);
+            
+            NSString *PW = [[NSString alloc] initWithFormat:@"%@", self.txtPassword.text];
+            NSString *hashPW = [PW MD5];
+            
+//            NSString *post =[[NSString alloc] initWithFormat:@"Name=%@&PW=%@",[self.txtUsername text],[self.txtPassword text]];
+//                        NSLog(@"PostData: %@",post);
+
+            NSString *post =[[NSString alloc] initWithFormat:@"Name=%@&PW=%@",[self.txtUsername text],hashPW];
+            //NSString *post =[[NSString alloc] initWithFormat:@"username=%@&password=%@",[self.txtUsername text],[self.txtPassword text]];
             NSLog(@"PostData: %@",post);
             
-            NSURL *url=[NSURL URLWithString:@"https://speedyreference.com/jitslogin.php"];
+            //NSURL *url=[NSURL URLWithString:@"https://speedyreference.com/jitslogin.php"];
+            //NSURL *url=[NSURL URLWithString:@"https://speedyreference.com/jitslogin.php"];
+            NSString * webURL = [[NSString alloc] initWithFormat:@"https://dev-webservice.bicsi.org/json/reply/Hello?Name=%@&PW=%@", [self.txtUsername text], hashPW];
             
+            
+            NSURL *url=[NSURL URLWithString:webURL];
             
             NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
             
@@ -164,7 +205,8 @@
         
         [self presentViewController:it animated:YES completion:NULL];
         
-        
+        //[self dismissViewControllerAnimated:YES completion:NULL];
+        [[self presentingViewController] dismissViewControllerAnimated:NO completion:nil];
     }
 
 }

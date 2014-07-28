@@ -336,7 +336,7 @@
         
         
         self.cancelButton.enabled = YES;
-        self.cancelButton.tintColor = [UIColor redColor];
+        self.cancelButton.tintColor = [UIColor whiteColor];
         [progressView setHidden:NO];
         self.startDate = [NSDate date];
         //cell.TapLabel.hidden = YES;

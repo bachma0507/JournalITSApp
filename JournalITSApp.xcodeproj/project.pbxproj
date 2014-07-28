@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C0ADE0E1986BC6E00CE5E0B /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0ADE0D1986BC6E00CE5E0B /* NSString+MD5.m */; };
 		4C12841A18CE291300060A56 /* PushIOManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C12841918CE291300060A56 /* PushIOManager.framework */; };
 		4C30FF3F18BCE23F000D785C /* beep-beep.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4C30FF3E18BCE23F000D785C /* beep-beep.aiff */; };
 		4C894E3D18B13CF700001623 /* backbutton-default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C894E3B18B13CF700001623 /* backbutton-default.png */; };
@@ -102,6 +103,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C0ADE0A1986B49C00CE5E0B /* libcommonCrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcommonCrypto.dylib; path = usr/lib/system/libcommonCrypto.dylib; sourceTree = SDKROOT; };
+		4C0ADE0C1986BC6E00CE5E0B /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
+		4C0ADE0D1986BC6E00CE5E0B /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 		4C12841918CE291300060A56 /* PushIOManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PushIOManager.framework; sourceTree = "<group>"; };
 		4C30FF3E18BCE23F000D785C /* beep-beep.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "beep-beep.aiff"; sourceTree = "<group>"; };
 		4C894E3B18B13CF700001623 /* backbutton-default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backbutton-default.png"; sourceTree = "<group>"; };
@@ -273,6 +277,7 @@
 		4CF6F96018846BBB00E2A539 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4C0ADE0A1986B49C00CE5E0B /* libcommonCrypto.dylib */,
 				4C12841918CE291300060A56 /* PushIOManager.framework */,
 				4CF6FB941891A26500E2A539 /* CoreLocation.framework */,
 				4CF6FB871890A82D00E2A539 /* Security.framework */,
@@ -458,6 +463,8 @@
 				4CF6FB7B188D79BD00E2A539 /* KeychainItemWrapper.m */,
 				4CF6FB74188CC97F00E2A539 /* Reachability.h */,
 				4CF6FB75188CC97F00E2A539 /* Reachability.m */,
+				4C0ADE0C1986BC6E00CE5E0B /* NSString+MD5.h */,
+				4C0ADE0D1986BC6E00CE5E0B /* NSString+MD5.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -624,6 +631,7 @@
 				4CF6FB55188BB4E600E2A539 /* ReaderContentTile.m in Sources */,
 				4CF6FB61188BB4E600E2A539 /* ReaderViewController.m in Sources */,
 				4CF6FB69188BC24300E2A539 /* issuesTableViewController.m in Sources */,
+				4C0ADE0E1986BC6E00CE5E0B /* NSString+MD5.m in Sources */,
 				4CF6FB0A188BB45A00E2A539 /* Download.m in Sources */,
 				4CF6FB64188BB4E600E2A539 /* UIXToolbarView.m in Sources */,
 				4CF6FB44188BB4E500E2A539 /* CGPDFDocument.m in Sources */,
@@ -769,6 +777,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JournalITSApp/JournalITSApp-Prefix.pch";
 				INFOPLIST_FILE = "JournalITSApp/JournalITSApp-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/system",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -795,6 +807,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JournalITSApp/JournalITSApp-Prefix.pch";
 				INFOPLIST_FILE = "JournalITSApp/JournalITSApp-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/system",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",

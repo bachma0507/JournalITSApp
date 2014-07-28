@@ -13,6 +13,8 @@
 
 @protocol popViewControllerDelegate
 - (void)popViewControllerDidFinish:(popViewController *)controller;
+
+
 @end
 
 @interface popViewController : UIViewController<issuesTableViewControllerDelegate>
@@ -20,5 +22,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *txtUsername;
 @property (strong, nonatomic) IBOutlet UITextField *txtPassword;
 - (IBAction)loginClicked:(id)sender;
+
+
 
 @end
