@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C0ADE0E1986BC6E00CE5E0B /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0ADE0D1986BC6E00CE5E0B /* NSString+MD5.m */; };
+		4C0ADE0E1986BC6E00CE5E0B /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0ADE0D1986BC6E00CE5E0B /* NSString+MD5.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		4C12841A18CE291300060A56 /* PushIOManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C12841918CE291300060A56 /* PushIOManager.framework */; };
 		4C30FF3F18BCE23F000D785C /* beep-beep.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4C30FF3E18BCE23F000D785C /* beep-beep.aiff */; };
 		4C894E3D18B13CF700001623 /* backbutton-default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C894E3B18B13CF700001623 /* backbutton-default.png */; };

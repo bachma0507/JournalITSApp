@@ -135,7 +135,7 @@
             
             //NSURL *url=[NSURL URLWithString:@"https://speedyreference.com/jitslogin.php"];
             //NSURL *url=[NSURL URLWithString:@"https://speedyreference.com/jitslogin.php"];
-            NSString * webURL = [[NSString alloc] initWithFormat:@"https://dev-webservice.bicsi.org/json/reply/Hello?Name=%@&PW=%@", [self.txtUsername text], hashPW];
+            NSString * webURL = [[NSString alloc] initWithFormat:@"https://dev-webservice.bicsi.org/json/reply/MobAuth?Name=%@&PW=%@", [self.txtUsername text], hashPW];
             
             
             NSURL *url=[NSURL URLWithString:webURL];
