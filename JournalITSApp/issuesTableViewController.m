@@ -71,22 +71,28 @@
 -(void)retrieveData
 {
     
-    NSURL *url = [NSURL URLWithString:@"http://speedyreference.com/jits.php"];
+    NSURL *url = [NSURL URLWithString:@"https://webservice.bicsi.org/json/reply/MobJournals?fetchJournal=yes"];
     NSData * data = [NSData dataWithContentsOfURL:url];
     
+    NSString * dataStr = [[NSString alloc] initWithData: data encoding:NSUTF8StringEncoding];
+    NSString *newDataStr = [dataStr substringWithRange:NSMakeRange(13, [dataStr length]-13)];
+    NSString *truncDataStr = [newDataStr substringToIndex:[ newDataStr length]-1 ];
     
-    json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+    NSData* truncData = [truncDataStr dataUsingEncoding:NSUTF8StringEncoding];
+    
+    
+    json = [NSJSONSerialization JSONObjectWithData:truncData options:kNilOptions error:nil];
     
     //Set up array
     jitsArray = [[NSMutableArray alloc] init];
     
     for (int i = 0; i < json.count; i++) {
         //create object
-        NSString * jID = [[json objectAtIndex:i] objectForKey:@"ID"];
-        NSString * jCoverImage = [[json objectAtIndex:i] objectForKey:@"COVERIMAGE"];
-        NSString * jURL = [[json objectAtIndex:i] objectForKey:@"URL"];
-        NSString * jIssue = [[json objectAtIndex:i] objectForKey:@"ISSUE"];
-        NSString * jTopic = [[json objectAtIndex:i] objectForKey:@"TOPIC"];
+        NSString * jID = [[json objectAtIndex:i] objectForKey:@"journID"];
+        NSString * jCoverImage = [[json objectAtIndex:i] objectForKey:@"coverImg"];
+        NSString * jURL = [[json objectAtIndex:i] objectForKey:@"journUrl"];
+        NSString * jIssue = [[json objectAtIndex:i] objectForKey:@"journIssue"];
+        NSString * jTopic = [[json objectAtIndex:i] objectForKey:@"journTopic"];
         
         
         jits * myJits = [[jits alloc] initWithjitsID: jID andCoverImage:jCoverImage andURL:jURL andIssue:jIssue andTopic:jTopic];
