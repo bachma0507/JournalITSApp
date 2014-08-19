@@ -175,31 +175,31 @@
 
 #endif // end of READER_ENABLE_MAIL Option
 
-//#if (READER_ENABLE_PRINT == TRUE) // Option
-//
-//		if (object.password == nil) // We can only print documents without passwords
-//		{
-//			Class printInteractionController = NSClassFromString(@"UIPrintInteractionController");
-//
-//			if ((printInteractionController != nil) && [printInteractionController isPrintingAvailable])
-//			{
-//				rightButtonX -= (PRINT_BUTTON_WIDTH + BUTTON_SPACE);
-//
-//				UIButton *printButton = [UIButton buttonWithType:UIButtonTypeCustom];
-//
-//				printButton.frame = CGRectMake(rightButtonX, BUTTON_Y, PRINT_BUTTON_WIDTH, BUTTON_HEIGHT);
-//				[printButton setImage:[UIImage imageNamed:@"Reader-Print"] forState:UIControlStateNormal];
-//				[printButton addTarget:self action:@selector(printButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
-//				[printButton setBackgroundImage:buttonH forState:UIControlStateHighlighted];
-//				[printButton setBackgroundImage:buttonN forState:UIControlStateNormal];
-//				printButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
-//				printButton.exclusiveTouch = YES;
-//
-//				[self addSubview:printButton]; titleWidth -= (PRINT_BUTTON_WIDTH + BUTTON_SPACE);
-//			}
-//		}
-//
-//#endif // end of READER_ENABLE_PRINT Option
+#if (READER_ENABLE_PRINT == TRUE) // Option
+
+		if (object.password == nil) // We can only print documents without passwords
+		{
+			Class printInteractionController = NSClassFromString(@"UIPrintInteractionController");
+
+			if ((printInteractionController != nil) && [printInteractionController isPrintingAvailable])
+			{
+				rightButtonX -= (PRINT_BUTTON_WIDTH + BUTTON_SPACE);
+
+				UIButton *printButton = [UIButton buttonWithType:UIButtonTypeCustom];
+
+				printButton.frame = CGRectMake(rightButtonX, BUTTON_Y, PRINT_BUTTON_WIDTH, BUTTON_HEIGHT);
+				[printButton setImage:[UIImage imageNamed:@"Reader-Print"] forState:UIControlStateNormal];
+				[printButton addTarget:self action:@selector(printButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+				[printButton setBackgroundImage:buttonH forState:UIControlStateHighlighted];
+				[printButton setBackgroundImage:buttonN forState:UIControlStateNormal];
+				printButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
+				printButton.exclusiveTouch = YES;
+
+				[self addSubview:printButton]; titleWidth -= (PRINT_BUTTON_WIDTH + BUTTON_SPACE);
+			}
+		}
+
+#endif // end of READER_ENABLE_PRINT Option
 
 		if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad)
 		{
