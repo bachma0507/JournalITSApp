@@ -187,7 +187,7 @@
                 
             } else {
                 //if (error) NSLog(@"Error: %@", error);
-                [self alertStatus:@"Connection Failed" :@"Sign in Failed!" :0];
+                [self alertStatus:@"Connection Failed - You must be a BICSI Member to sign in" :@"Sign in Failed!" :0];
             }
         }
     }
