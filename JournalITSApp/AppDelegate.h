@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <PushIOManager/PushIOManager.h>
+#import "Crittercism.h"
 
 @class Reachability;
 

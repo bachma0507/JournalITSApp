@@ -21,6 +21,8 @@
 		4C999FD51896DB5800DA102A /* news_tab_icon_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C999FD11896DB5800DA102A /* news_tab_icon_selected@2x.png */; };
 		4C999FD61896DB5800DA102A /* news_tab_icon_unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C999FD21896DB5800DA102A /* news_tab_icon_unselected.png */; };
 		4C999FD71896DB5800DA102A /* news_tab_icon_unselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C999FD31896DB5800DA102A /* news_tab_icon_unselected@2x.png */; };
+		4CA692B819A699A700BDB9A3 /* dsym_upload.sh in Resources */ = {isa = PBXBuildFile; fileRef = 4CA692B619A699A700BDB9A3 /* dsym_upload.sh */; };
+		4CA692B919A699A700BDB9A3 /* libCrittercism_v4_3_4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA692B719A699A700BDB9A3 /* libCrittercism_v4_3_4.a */; };
 		4CC290D01891A78900F712F1 /* pushio_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CC290CF1891A78900F712F1 /* pushio_config.json */; };
 		4CF6F96218846BBB00E2A539 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF6F96118846BBB00E2A539 /* Foundation.framework */; };
 		4CF6F96418846BBB00E2A539 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF6F96318846BBB00E2A539 /* CoreGraphics.framework */; };
@@ -119,6 +121,11 @@
 		4C999FD11896DB5800DA102A /* news_tab_icon_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news_tab_icon_selected@2x.png"; sourceTree = "<group>"; };
 		4C999FD21896DB5800DA102A /* news_tab_icon_unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = news_tab_icon_unselected.png; sourceTree = "<group>"; };
 		4C999FD31896DB5800DA102A /* news_tab_icon_unselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news_tab_icon_unselected@2x.png"; sourceTree = "<group>"; };
+		4CA692B319A699A700BDB9A3 /* CRFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRFilter.h; sourceTree = "<group>"; };
+		4CA692B419A699A700BDB9A3 /* Crittercism.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crittercism.h; sourceTree = "<group>"; };
+		4CA692B519A699A700BDB9A3 /* CrittercismDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrittercismDelegate.h; sourceTree = "<group>"; };
+		4CA692B619A699A700BDB9A3 /* dsym_upload.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = dsym_upload.sh; sourceTree = "<group>"; };
+		4CA692B719A699A700BDB9A3 /* libCrittercism_v4_3_4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCrittercism_v4_3_4.a; sourceTree = "<group>"; };
 		4CC290CF1891A78900F712F1 /* pushio_config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pushio_config.json; sourceTree = "<group>"; };
 		4CF6F95E18846BBB00E2A539 /* JournalITSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JournalITSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF6F96118846BBB00E2A539 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -238,6 +245,7 @@
 				4CF6FB00188BB3F900E2A539 /* QuartzCore.framework in Frameworks */,
 				4CF6F96418846BBB00E2A539 /* CoreGraphics.framework in Frameworks */,
 				4CF6F96618846BBB00E2A539 /* UIKit.framework in Frameworks */,
+				4CA692B919A699A700BDB9A3 /* libCrittercism_v4_3_4.a in Frameworks */,
 				4CF6F96218846BBB00E2A539 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,6 +263,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4CA692B219A699A700BDB9A3 /* CrittercismSDK */ = {
+			isa = PBXGroup;
+			children = (
+				4CA692B319A699A700BDB9A3 /* CRFilter.h */,
+				4CA692B419A699A700BDB9A3 /* Crittercism.h */,
+				4CA692B519A699A700BDB9A3 /* CrittercismDelegate.h */,
+				4CA692B619A699A700BDB9A3 /* dsym_upload.sh */,
+				4CA692B719A699A700BDB9A3 /* libCrittercism_v4_3_4.a */,
+			);
+			path = CrittercismSDK;
+			sourceTree = "<group>";
+		};
 		4CF6F95518846BBB00E2A539 = {
 			isa = PBXGroup;
 			children = (
@@ -295,6 +315,7 @@
 		4CF6F96718846BBB00E2A539 /* JournalITSApp */ = {
 			isa = PBXGroup;
 			children = (
+				4CA692B219A699A700BDB9A3 /* CrittercismSDK */,
 				4CC290CF1891A78900F712F1 /* pushio_config.json */,
 				4CF6FB841890252600E2A539 /* StoryBoard */,
 				4CF6FB73188CC96500E2A539 /* Classes */,
@@ -556,6 +577,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CA692B819A699A700BDB9A3 /* dsym_upload.sh in Resources */,
 				4CF6FB4F188BB4E600E2A539 /* Reader-Print.png in Resources */,
 				4C999FCB1896D8C600DA102A /* home_tab_icon_selected@2x.png in Resources */,
 				4C30FF3F18BCE23F000D785C /* beep-beep.aiff in Resources */,
@@ -780,6 +802,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SDKROOT)/usr/lib/system",
+					"$(PROJECT_DIR)/JournalITSApp/CrittercismSDK",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -810,6 +833,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SDKROOT)/usr/lib/system",
+					"$(PROJECT_DIR)/JournalITSApp/CrittercismSDK",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
