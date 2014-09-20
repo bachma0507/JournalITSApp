@@ -61,7 +61,7 @@
     
     [self.navigationItem setHidesBackButton:YES];
     
-
+    
 }
 
 - (void)waitForSevenSeconds {
@@ -71,28 +71,22 @@
 -(void)retrieveData
 {
     
-    NSURL *url = [NSURL URLWithString:@"https://webservice.bicsi.org/json/reply/MobJournals?fetchJournal=yes"];
+    NSURL *url = [NSURL URLWithString:@"http://speedyreference.com/jits.php"];
     NSData * data = [NSData dataWithContentsOfURL:url];
     
-    NSString * dataStr = [[NSString alloc] initWithData: data encoding:NSUTF8StringEncoding];
-    NSString *newDataStr = [dataStr substringWithRange:NSMakeRange(13, [dataStr length]-13)];
-    NSString *truncDataStr = [newDataStr substringToIndex:[ newDataStr length]-1 ];
     
-    NSData* truncData = [truncDataStr dataUsingEncoding:NSUTF8StringEncoding];
-    
-    
-    json = [NSJSONSerialization JSONObjectWithData:truncData options:kNilOptions error:nil];
+    json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
     
     //Set up array
     jitsArray = [[NSMutableArray alloc] init];
     
     for (int i = 0; i < json.count; i++) {
         //create object
-        NSString * jID = [[json objectAtIndex:i] objectForKey:@"journID"];
-        NSString * jCoverImage = [[json objectAtIndex:i] objectForKey:@"coverImg"];
-        NSString * jURL = [[json objectAtIndex:i] objectForKey:@"journUrl"];
-        NSString * jIssue = [[json objectAtIndex:i] objectForKey:@"journIssue"];
-        NSString * jTopic = [[json objectAtIndex:i] objectForKey:@"journTopic"];
+        NSString * jID = [[json objectAtIndex:i] objectForKey:@"ID"];
+        NSString * jCoverImage = [[json objectAtIndex:i] objectForKey:@"COVERIMAGE"];
+        NSString * jURL = [[json objectAtIndex:i] objectForKey:@"URL"];
+        NSString * jIssue = [[json objectAtIndex:i] objectForKey:@"ISSUE"];
+        NSString * jTopic = [[json objectAtIndex:i] objectForKey:@"TOPIC"];
         
         
         jits * myJits = [[jits alloc] initWithjitsID: jID andCoverImage:jCoverImage andURL:jURL andIssue:jIssue andTopic:jTopic];
@@ -222,7 +216,7 @@
     //cell.backgroundView = [[UIImageView alloc] initWithImage:[ [UIImage imageNamed:@"bkgnd2.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:5.0]];
     
     
-
+    
     
     jits * jitsInstance = nil;
     
@@ -342,7 +336,7 @@
         
         
         self.cancelButton.enabled = YES;
-        self.cancelButton.tintColor = [UIColor whiteColor];
+        self.cancelButton.tintColor = [UIColor redColor];
         [progressView setHidden:NO];
         self.startDate = [NSDate date];
         //cell.TapLabel.hidden = YES;
@@ -350,13 +344,13 @@
         cell.TapLabel.textColor = [UIColor colorWithRed:243 green:156 blue:18 alpha:1];
         cell.TapLabel.font = [UIFont systemFontOfSize:17.0];
         
-//        HUD = [[MBProgressHUD alloc] initWithView:self.view];
-//        HUD.labelText = @"Downloading...";
-//        //HUD.detailsLabelText = @"Just relax";
-//        HUD.mode = MBProgressHUDAnimationFade;
-//        //HUD.mode = MBProgressHUDModeDeterminateHorizontalBar;
-//        [self.view addSubview:HUD];
-//        [HUD showWhileExecuting:@selector(waitForSevenSeconds) onTarget:self withObject:nil animated:YES];
+        //        HUD = [[MBProgressHUD alloc] initWithView:self.view];
+        //        HUD.labelText = @"Downloading...";
+        //        //HUD.detailsLabelText = @"Just relax";
+        //        HUD.mode = MBProgressHUDAnimationFade;
+        //        //HUD.mode = MBProgressHUDModeDeterminateHorizontalBar;
+        //        [self.view addSubview:HUD];
+        //        [HUD showWhileExecuting:@selector(waitForSevenSeconds) onTarget:self withObject:nil animated:YES];
         
         
         [self.downloadManager start];
@@ -378,6 +372,8 @@
         NSString * fileName = [[NSString alloc]initWithFormat:@"%@", [myURL lastPathComponent]];
         
         NSString* foofile = [downloadFolder stringByAppendingPathComponent:fileName];
+        
+        NSLog(@"foofile path is:%@", foofile);
         
         NSString *phrase = nil; // Document password (for unlocking most encrypted PDF files)
         
@@ -415,11 +411,11 @@
 {
 #if (DEMO_VIEW_CONTROLLER_PUSH == TRUE)
     
-	[self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
     
 #else // dismiss the modal view controller
     
-	[self dismissViewControllerAnimated:YES completion:NULL];
+    [self dismissViewControllerAnimated:YES completion:NULL];
     
 #endif // DEMO_VIEW_CONTROLLER_PUSH
 }
@@ -475,10 +471,10 @@
         
     }
     else{
-    NSMutableArray *array = [self.jitsArray mutableCopy];
-    [array removeObjectAtIndex:indexPath.row];
-    self.jitsArray = array;
-    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        NSMutableArray *array = [self.jitsArray mutableCopy];
+        [array removeObjectAtIndex:indexPath.row];
+        self.jitsArray = array;
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
 

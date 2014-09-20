@@ -2,7 +2,7 @@
 //  AppDelegate.h
 //  JournalITSApp
 //
-//  Creae by Barry on 1/13/14.
+//  Created by Barry on 1/13/14.
 //  Copyright (c) 2014 BICSI. All rights reserved.
 //
 

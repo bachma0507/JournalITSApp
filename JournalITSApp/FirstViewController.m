@@ -37,7 +37,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSFileManager *fileManager = [NSFileManager new]; NSString *documentsPath = [ReaderDocument documentsPath];
     
+    for (NSString *sourcePath in [[NSBundle mainBundle] pathsForResourcesOfType:@"pdf" inDirectory:nil]) // PDFs
+    {
+        NSLog(@"SOURCEPATH IS: %@", sourcePath);
+        
+        NSString *targetPath = [documentsPath stringByAppendingPathComponent:[sourcePath lastPathComponent]];
+        
+        NSLog(@"TARGETPATH IS: %@", targetPath);
+        
+        //[fileManager removeItemAtPath:targetPath error:NULL]; // Delete target file
+        
+        [fileManager copyItemAtPath:sourcePath toPath:targetPath error:NULL];
+    }
+    
+//    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+//    
+//    NSString *name = [infoDictionary objectForKey:@"CFBundleName"];
+//    
+//    NSString *version = [infoDictionary objectForKey:@"CFBundleVersion"];
+//    
+//    self.title = [[NSString alloc] initWithFormat:@"%@ v%@", name, version];
     
     
     //[self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bkgnd2.png"]]];
@@ -79,12 +100,17 @@
 
 - (IBAction)readSampleIssue:(id)sender {
     
-	NSString *phrase = nil; // Document password (for unlocking most encrypted PDF files)
+    NSString *phrase = nil; // Document password (for unlocking most encrypted PDF files)
     
-	NSArray *pdfs = [[NSBundle mainBundle] pathsForResourcesOfType:@"pdf" inDirectory:nil];
+    NSFileManager *fileManager = [NSFileManager new]; NSString *documentsPath = [ReaderDocument documentsPath];
     
-	NSString *filePath = [pdfs lastObject]; assert(filePath != nil); // Path to last PDF file
+    NSArray *fileList = [fileManager contentsOfDirectoryAtPath:documentsPath error:NULL];
     
+    NSString *fileName = [fileList firstObject]; // Presume that the first file is a PDF
+    
+    NSString *filePath = [documentsPath stringByAppendingPathComponent:fileName];
+    
+    NSLog(@"FILEPATH IS: %@", filePath);
     NSURL *url = [NSURL fileURLWithPath:filePath];
     [url setResourceValue:[NSNumber numberWithBool:YES] forKey:NSURLIsExcludedFromBackupKey error:nil];
     

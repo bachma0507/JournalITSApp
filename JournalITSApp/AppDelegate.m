@@ -40,6 +40,8 @@
     
     
     
+    
+    
     [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x195ba6)];
     //[[UINavigationBar appearance] setTranslucent:NO];
     

@@ -206,7 +206,7 @@
         [self presentViewController:it animated:YES completion:NULL];
         
         //[self dismissViewControllerAnimated:YES completion:NULL];
-        [[self presentingViewController] dismissViewControllerAnimated:NO completion:nil];
+        //[[self presentingViewController] dismissViewControllerAnimated:NO completion:nil];
     }
 
 }
