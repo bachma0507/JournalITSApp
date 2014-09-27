@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4C0ADE0E1986BC6E00CE5E0B /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0ADE0D1986BC6E00CE5E0B /* NSString+MD5.m */; settings = {COMPILER_FLAGS = "-w"; }; };
+		4C22872319D7450300655043 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C22872219D7450300655043 /* Social.framework */; };
+		4C22872519D7453300655043 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C22872419D7453300655043 /* Twitter.framework */; };
+		4C22872719D7456500655043 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C22872619D7456500655043 /* Accounts.framework */; };
 		4C30FF3F18BCE23F000D785C /* beep-beep.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4C30FF3E18BCE23F000D785C /* beep-beep.aiff */; };
 		4C4577D419CC79970012441B /* CGPDFDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C45779C19CC79970012441B /* CGPDFDocument.m */; };
 		4C4577D519CC79970012441B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C45779D19CC79970012441B /* Localizable.strings */; };
@@ -61,6 +64,14 @@
 		4CA692B919A699A700BDB9A3 /* libCrittercism_v4_3_4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA692B719A699A700BDB9A3 /* libCrittercism_v4_3_4.a */; };
 		4CC290D01891A78900F712F1 /* pushio_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CC290CF1891A78900F712F1 /* pushio_config.json */; };
 		4CCB340619CE02FE007E5555 /* PushIOManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCB340519CE02FE007E5555 /* PushIOManager.framework */; };
+		4CF1F3C619D1C2DE00E0F6EB /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF1F3C419D1C2DE00E0F6EB /* Bolts.framework */; };
+		4CF1F3C719D1C2DE00E0F6EB /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF1F3C519D1C2DE00E0F6EB /* Parse.framework */; };
+		4CF1F3C919D1C32400E0F6EB /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF1F3C819D1C32400E0F6EB /* AudioToolbox.framework */; };
+		4CF1F3CB19D1C32D00E0F6EB /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF1F3CA19D1C32D00E0F6EB /* CFNetwork.framework */; };
+		4CF1F3CD19D1C33C00E0F6EB /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF1F3CC19D1C33C00E0F6EB /* libz.dylib */; };
+		4CF1F3CF19D1C34900E0F6EB /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF1F3CE19D1C34900E0F6EB /* MobileCoreServices.framework */; };
+		4CF1F3D119D1C35700E0F6EB /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF1F3D019D1C35700E0F6EB /* StoreKit.framework */; };
+		4CF1F3D319D1C36500E0F6EB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF1F3D219D1C36500E0F6EB /* SystemConfiguration.framework */; };
 		4CF6F96218846BBB00E2A539 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF6F96118846BBB00E2A539 /* Foundation.framework */; };
 		4CF6F96418846BBB00E2A539 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF6F96318846BBB00E2A539 /* CoreGraphics.framework */; };
 		4CF6F96618846BBB00E2A539 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF6F96518846BBB00E2A539 /* UIKit.framework */; };
@@ -111,6 +122,9 @@
 		4C0ADE0C1986BC6E00CE5E0B /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		4C0ADE0D1986BC6E00CE5E0B /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 		4C12841918CE291300060A56 /* PushIOManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PushIOManager.framework; sourceTree = "<group>"; };
+		4C22872219D7450300655043 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		4C22872419D7453300655043 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		4C22872619D7456500655043 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		4C30FF3E18BCE23F000D785C /* beep-beep.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "beep-beep.aiff"; sourceTree = "<group>"; };
 		4C45779919CC78DE0012441B /* PushIOManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PushIOManager.framework; path = ../../Desktop/PushIOManager.framework; sourceTree = "<group>"; };
 		4C45779B19CC79970012441B /* CGPDFDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGPDFDocument.h; sourceTree = "<group>"; };
@@ -188,6 +202,14 @@
 		4CA692B719A699A700BDB9A3 /* libCrittercism_v4_3_4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCrittercism_v4_3_4.a; sourceTree = "<group>"; };
 		4CC290CF1891A78900F712F1 /* pushio_config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pushio_config.json; sourceTree = "<group>"; };
 		4CCB340519CE02FE007E5555 /* PushIOManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PushIOManager.framework; path = ../../PushIOManager.framework; sourceTree = "<group>"; };
+		4CF1F3C419D1C2DE00E0F6EB /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		4CF1F3C519D1C2DE00E0F6EB /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		4CF1F3C819D1C32400E0F6EB /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		4CF1F3CA19D1C32D00E0F6EB /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		4CF1F3CC19D1C33C00E0F6EB /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		4CF1F3CE19D1C34900E0F6EB /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		4CF1F3D019D1C35700E0F6EB /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		4CF1F3D219D1C36500E0F6EB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4CF6F95E18846BBB00E2A539 /* JournalITSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JournalITSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF6F96118846BBB00E2A539 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4CF6F96318846BBB00E2A539 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -243,6 +265,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C22872719D7456500655043 /* Accounts.framework in Frameworks */,
+				4C22872519D7453300655043 /* Twitter.framework in Frameworks */,
+				4C22872319D7450300655043 /* Social.framework in Frameworks */,
+				4CF1F3D319D1C36500E0F6EB /* SystemConfiguration.framework in Frameworks */,
+				4CF1F3D119D1C35700E0F6EB /* StoreKit.framework in Frameworks */,
+				4CF1F3CF19D1C34900E0F6EB /* MobileCoreServices.framework in Frameworks */,
+				4CF1F3CD19D1C33C00E0F6EB /* libz.dylib in Frameworks */,
+				4CF1F3CB19D1C32D00E0F6EB /* CFNetwork.framework in Frameworks */,
+				4CF1F3C919D1C32400E0F6EB /* AudioToolbox.framework in Frameworks */,
 				4CCB340619CE02FE007E5555 /* PushIOManager.framework in Frameworks */,
 				4CF6FB951891A26500E2A539 /* CoreLocation.framework in Frameworks */,
 				4CF6FB881890A82E00E2A539 /* Security.framework in Frameworks */,
@@ -251,7 +282,9 @@
 				4CF6FB00188BB3F900E2A539 /* QuartzCore.framework in Frameworks */,
 				4CF6F96418846BBB00E2A539 /* CoreGraphics.framework in Frameworks */,
 				4CF6F96618846BBB00E2A539 /* UIKit.framework in Frameworks */,
+				4CF1F3C619D1C2DE00E0F6EB /* Bolts.framework in Frameworks */,
 				4CA692B919A699A700BDB9A3 /* libCrittercism_v4_3_4.a in Frameworks */,
+				4CF1F3C719D1C2DE00E0F6EB /* Parse.framework in Frameworks */,
 				4CF6F96218846BBB00E2A539 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +317,8 @@
 		4CF6F95518846BBB00E2A539 = {
 			isa = PBXGroup;
 			children = (
+				4CF1F3C419D1C2DE00E0F6EB /* Bolts.framework */,
+				4CF1F3C519D1C2DE00E0F6EB /* Parse.framework */,
 				4CF6F96718846BBB00E2A539 /* JournalITSApp */,
 				4CF6F98918846BBB00E2A539 /* JournalITSAppTests */,
 				4CF6F96018846BBB00E2A539 /* Frameworks */,
@@ -303,6 +338,15 @@
 		4CF6F96018846BBB00E2A539 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4C22872619D7456500655043 /* Accounts.framework */,
+				4C22872419D7453300655043 /* Twitter.framework */,
+				4C22872219D7450300655043 /* Social.framework */,
+				4CF1F3D219D1C36500E0F6EB /* SystemConfiguration.framework */,
+				4CF1F3D019D1C35700E0F6EB /* StoreKit.framework */,
+				4CF1F3CE19D1C34900E0F6EB /* MobileCoreServices.framework */,
+				4CF1F3CC19D1C33C00E0F6EB /* libz.dylib */,
+				4CF1F3CA19D1C32D00E0F6EB /* CFNetwork.framework */,
+				4CF1F3C819D1C32400E0F6EB /* AudioToolbox.framework */,
 				4CCB340519CE02FE007E5555 /* PushIOManager.framework */,
 				4C45779919CC78DE0012441B /* PushIOManager.framework */,
 				4C0ADE0A1986B49C00CE5E0B /* libcommonCrypto.dylib */,
@@ -762,6 +806,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -792,9 +837,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -808,6 +855,7 @@
 					"$(inherited)",
 					/Users/barry/Desktop,
 					/Users/barry/Downloads,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JournalITSApp/JournalITSApp-Prefix.pch";
@@ -841,6 +889,7 @@
 					"$(inherited)",
 					/Users/barry/Desktop,
 					/Users/barry/Downloads,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JournalITSApp/JournalITSApp-Prefix.pch";
