@@ -111,8 +111,24 @@
     NSString *filePath = [documentsPath stringByAppendingPathComponent:fileName];
     
     NSLog(@"FILEPATH IS: %@", filePath);
+    
+    
+    
     NSURL *url = [NSURL fileURLWithPath:filePath];
-    [url setResourceValue:[NSNumber numberWithBool:YES] forKey:NSURLIsExcludedFromBackupKey error:nil];
+    
+    assert([[NSFileManager defaultManager] fileExistsAtPath: [url path]]);
+    
+    NSError *error = nil;
+    
+    BOOL success =[url setResourceValue:[NSNumber numberWithBool:YES] forKey:NSURLIsExcludedFromBackupKey error:nil];
+    
+    if (success) {
+        NSLog(@"NO ERROR EXCLUDING %@ FROM BACKUP", [url lastPathComponent]);
+    }
+    
+    if(!success){
+        NSLog(@"Error excluding %@ from backup %@", [url lastPathComponent], error);
+    }
     
 	ReaderDocument *document = [ReaderDocument withDocumentFilePath:filePath password:phrase];
     
