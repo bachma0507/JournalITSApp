@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4C0ADE0E1986BC6E00CE5E0B /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0ADE0D1986BC6E00CE5E0B /* NSString+MD5.m */; settings = {COMPILER_FLAGS = "-w"; }; };
+		4C1C91F71A78317200B5EB0C /* Reader-Export.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C1C91F51A78317200B5EB0C /* Reader-Export.png */; };
+		4C1C91F81A78317200B5EB0C /* Reader-Export@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C1C91F61A78317200B5EB0C /* Reader-Export@2x.png */; };
 		4C22872319D7450300655043 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C22872219D7450300655043 /* Social.framework */; };
 		4C22872519D7453300655043 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C22872419D7453300655043 /* Twitter.framework */; };
 		4C22872719D7456500655043 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C22872619D7456500655043 /* Accounts.framework */; };
@@ -20,8 +22,6 @@
 		4C4577D919CC79970012441B /* Reader-Button-N@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4577A119CC79970012441B /* Reader-Button-N@2x.png */; };
 		4C4577DA19CC79970012441B /* Reader-Email.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4577A219CC79970012441B /* Reader-Email.png */; };
 		4C4577DB19CC79970012441B /* Reader-Email@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4577A319CC79970012441B /* Reader-Email@2x.png */; };
-		4C4577DC19CC79970012441B /* Reader-Export.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4577A419CC79970012441B /* Reader-Export.png */; };
-		4C4577DD19CC79970012441B /* Reader-Export@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4577A519CC79970012441B /* Reader-Export@2x.png */; };
 		4C4577DE19CC79970012441B /* Reader-Mark-N.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4577A619CC79970012441B /* Reader-Mark-N.png */; };
 		4C4577DF19CC79970012441B /* Reader-Mark-N@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4577A719CC79970012441B /* Reader-Mark-N@2x.png */; };
 		4C4577E019CC79970012441B /* Reader-Mark-Y.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4577A819CC79970012441B /* Reader-Mark-Y.png */; };
@@ -122,6 +122,8 @@
 		4C0ADE0C1986BC6E00CE5E0B /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		4C0ADE0D1986BC6E00CE5E0B /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 		4C12841918CE291300060A56 /* PushIOManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PushIOManager.framework; sourceTree = "<group>"; };
+		4C1C91F51A78317200B5EB0C /* Reader-Export.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Reader-Export.png"; sourceTree = "<group>"; };
+		4C1C91F61A78317200B5EB0C /* Reader-Export@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Reader-Export@2x.png"; sourceTree = "<group>"; };
 		4C22872219D7450300655043 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		4C22872419D7453300655043 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		4C22872619D7456500655043 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -136,8 +138,6 @@
 		4C4577A119CC79970012441B /* Reader-Button-N@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Reader-Button-N@2x.png"; sourceTree = "<group>"; };
 		4C4577A219CC79970012441B /* Reader-Email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Reader-Email.png"; sourceTree = "<group>"; };
 		4C4577A319CC79970012441B /* Reader-Email@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Reader-Email@2x.png"; sourceTree = "<group>"; };
-		4C4577A419CC79970012441B /* Reader-Export.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Reader-Export.png"; sourceTree = "<group>"; };
-		4C4577A519CC79970012441B /* Reader-Export@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Reader-Export@2x.png"; sourceTree = "<group>"; };
 		4C4577A619CC79970012441B /* Reader-Mark-N.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Reader-Mark-N.png"; sourceTree = "<group>"; };
 		4C4577A719CC79970012441B /* Reader-Mark-N@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Reader-Mark-N@2x.png"; sourceTree = "<group>"; };
 		4C4577A819CC79970012441B /* Reader-Mark-Y.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Reader-Mark-Y.png"; sourceTree = "<group>"; };
@@ -450,6 +450,8 @@
 		4CF6FB0C188BB48100E2A539 /* Reader */ = {
 			isa = PBXGroup;
 			children = (
+				4C1C91F51A78317200B5EB0C /* Reader-Export.png */,
+				4C1C91F61A78317200B5EB0C /* Reader-Export@2x.png */,
 				4C45779B19CC79970012441B /* CGPDFDocument.h */,
 				4C45779C19CC79970012441B /* CGPDFDocument.m */,
 				4C45779D19CC79970012441B /* Localizable.strings */,
@@ -459,8 +461,6 @@
 				4C4577A119CC79970012441B /* Reader-Button-N@2x.png */,
 				4C4577A219CC79970012441B /* Reader-Email.png */,
 				4C4577A319CC79970012441B /* Reader-Email@2x.png */,
-				4C4577A419CC79970012441B /* Reader-Export.png */,
-				4C4577A519CC79970012441B /* Reader-Export@2x.png */,
 				4C4577A619CC79970012441B /* Reader-Mark-N.png */,
 				4C4577A719CC79970012441B /* Reader-Mark-N@2x.png */,
 				4C4577A819CC79970012441B /* Reader-Mark-Y.png */,
@@ -635,10 +635,11 @@
 				4C999FCB1896D8C600DA102A /* home_tab_icon_selected@2x.png in Resources */,
 				4C4577D919CC79970012441B /* Reader-Button-N@2x.png in Resources */,
 				4C30FF3F18BCE23F000D785C /* beep-beep.aiff in Resources */,
+				4C1C91F71A78317200B5EB0C /* Reader-Export.png in Resources */,
+				4C1C91F81A78317200B5EB0C /* Reader-Export@2x.png in Resources */,
 				4C4577E519CC79970012441B /* Reader-Thumbs@2x.png in Resources */,
 				4C999FD71896DB5800DA102A /* news_tab_icon_unselected@2x.png in Resources */,
 				4C4577E019CC79970012441B /* Reader-Mark-Y.png in Resources */,
-				4C4577DC19CC79970012441B /* Reader-Export.png in Resources */,
 				4C4577E419CC79970012441B /* Reader-Thumbs.png in Resources */,
 				4CF6FAF8188BACEE00E2A539 /* Sample Issue.pdf in Resources */,
 				4CC290D01891A78900F712F1 /* pushio_config.json in Resources */,
@@ -648,7 +649,6 @@
 				4C894E3D18B13CF700001623 /* backbutton-default.png in Resources */,
 				4C4577E319CC79970012441B /* Reader-Print@2x.png in Resources */,
 				4CF6FAF6188BACA400E2A539 /* JITSSampleCoverApp.png in Resources */,
-				4C4577DD19CC79970012441B /* Reader-Export@2x.png in Resources */,
 				4CF6FB72188CA27400E2A539 /* cellbkgnd.jpg in Resources */,
 				4C999FD41896DB5800DA102A /* news_tab_icon_selected.png in Resources */,
 				4C4577D519CC79970012441B /* Localizable.strings in Resources */,

@@ -1,4 +1,4 @@
-#!/bin/sh
+
 # Copyright 2013 Crittercism, Inc. All rights reserved.
 #
 # Usage:
